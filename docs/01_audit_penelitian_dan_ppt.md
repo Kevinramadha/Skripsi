@@ -167,10 +167,10 @@ Ringkasan: 0 slide berisi salah total; 47 dipertahankan/dipindah apa adanya, 13 
 |---|---|---|---|---|
 | K1 | Abstrak buku | Menyebut "Sentinel-2, Landsat" dan "akan disimulasikan/diimplementasikan" | PPT memakai data final: VIIRS DNB (NTL) dan Dynamic World (berbasis Sentinel-2); tidak menyebut Landsat | Perbarui abstrak (tense lampau, dataset final, angka hasil) |
 | K2 | Buku 1.2 | "periode simulasi 2024–2050" vs bagian lain 2025–2050 | 2025–2050 | Ganti 2024 → 2025 |
-| K3 | PPT-lama S4 | Kontribusi PDB "2,2% → 4,9% (2020→2025)" | Buku: 2,2% (2020) → 4% (2024) | — |
+| K3 | PPT-lama S4 | Kontribusi PDB "2,2% → 4,9% (2020→2025)" vs buku "2,2% (2020) → 4% (2024)" | **Keputusan penulis: pakai 4,9% (data terbaru 2025)** | Perbarui Subbab 1.1 dengan angka dan sumber 2025 agar buku dan PPT sama |
 | K4 | Buku 1.1 vs 3.2 | ">40 juta perjalanan 2025" vs ">38 juta pada 2024" | Pakai angka 2025 (>40 juta) secara konsisten | Samakan tahun acuan |
 | K5 | Tabel 17 vs Buku 4.4.5 | E15 "×3 (0,806)" vs "0,832"; repo: 0,83178 (= 3 × 0,27726) | 0,832 | 0,806 = 3 × LPE lama; perbarui Tabel 17 |
-| K6 | Buku 4.4.5 vs repo `uji_kondisi_ekstrem_v2.ipynb` | Batas keberlakuan "LPE ≈ 0,336 (1,25× nilai dasar)" vs repo "LPE ≤ 0,346575" (= 1,25 × 0,27726). 0,336 ≈ 1,25 × 0,26864 (LPE sebelum koreksi) | Di PPT tulis "≈1,25× nilai dasar" dan **konfirmasi angka ke pembimbing** sebelum menampilkan 0,336 | Kemungkinan 0,347; cek ulang |
+| K6 | Buku 4.4.5 vs repo `uji_kondisi_ekstrem_v2.ipynb` | Batas keberlakuan "LPE ≈ 0,336 (1,25× nilai dasar)" vs repo "LPE ≤ 0,346575" (= 1,25 × 0,27726). 0,336 ≈ 1,25 × 0,26864 (LPE sebelum koreksi) | **Keputusan penulis: pakai 0,336 sesuai buku.** Catatan: secara aritmetika 0,336 = 1,25 × 0,26864 (LPE sebelum koreksi Tahap 0), bukan nilai hasil kalibrasi; kalibrasi yang ditolak di Tahap 4 adalah laju konversi dasar (0,0638662), bukan LPE | Siapkan jawaban bila penguji menghitung 1,25 × 0,27726 = 0,347 |
 | K7 | Buku 4.2.1 & 4.10.1 | "koefisien determinasi model regresi sekitar 0,41" padahal R² level = 0,785; 0,405 adalah R² selisih tahunan | Tulis "R² selisih tahunan 0,405 (R² level 0,785)" | Perjelas label |
 | K8 | Tabel 31 | F1 77,19% adalah versi **tak terbobot**, sedangkan OA/UA/PA pada tabel versi terbobot; F1 terbobot = 69,58% [Repo: Uji Akurasi Lokal/Metrik Imbalance] | Beri label "(tak terbobot)" pada F1 dan Kappa | Tambah keterangan |
 | K9 | Lampiran 7 buku | Lahan terbangun 2015 tertulis "9443.037,00"; Master Data: 43.037,00 ha (ekstrapolasi) | 43.037 ha (ditandai ekstrapolasi) | Perbaiki salah ketik |
@@ -184,7 +184,7 @@ Ringkasan: 0 slide berisi salah total; 47 dipertahankan/dipindah apa adanya, 13 
 | K17 | Buku 5.1 butir 3 | Tidak menyebut skor SUS | PPT menampilkan SUS 88,50 (ada di 4.9.3) | Tambahkan ke kesimpulan |
 | K18 | Repo NTL korelasi | Korelasi selisih r = 0,636, p = 0,174 (n = 6 selisih, tidak signifikan pada α 0,05) | Siapkan di lampiran L15 untuk tanya jawab; jangan klaim signifikan | Pertimbangkan menyebut keterbatasan ini |
 | K19 | Tabel 21 vs Tabel 60 | TPK termasuk KPI deskriptif, tetapi tidak muncul di Tabel 60. Repo: TPK 2050 BAU 0,3584; S 0,3537; DP 0,3458 | Tampilkan di lampiran L27 sebagai pelengkap | Tambahkan baris TPK |
-| K20 | PPT-lama S39 | "3 dari 4 peringkat teratas berstatus asumsi" | Buku: "empat dari enam peringkat teratas" | — |
+| K20 | Buku 4.7.1 vs Tabel 56 | Teks buku: asumsi menempati "empat dari enam peringkat teratas"; Tabel 56 hanya menandai 3 asumsi di 6 teratas (peringkat 1, 3, 4). PPT-lama "3 dari 4" konsisten dengan tabel | **Ralat audit awal:** PPT tetap "3 dari 4" | Perbaiki kalimat buku menjadi "tiga dari empat" (atau tiga dari enam) |
 | K21 | Buku 4.3.2.4 | Menyebut uji kestabilan horizon diperpanjang sampai 2150, hasilnya tidak disajikan. Repo: puncak wisatawan 122,9 juta pada 2080 lalu turun; RDDL 0,018 pada 2150 | Lampiran L20 (diberi label "tambahan dari repo") | Opsional ditambah |
 | K22 | Buku 4.2.1 (validasi spasial) | Pantai Baron disebut "kawasan wisata pantai"; script GEE melabeli "karst/minim aktivitas" | Ikut buku | — |
 
