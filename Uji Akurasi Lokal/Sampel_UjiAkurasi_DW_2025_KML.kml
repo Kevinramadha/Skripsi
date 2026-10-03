@@ -1,0 +1,2406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>1.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>0</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.5833750431046,-8.137254253904068 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>2.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>1</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.0618131891448,-7.850961172855176 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>3.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>2</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.65533009736257,-7.863717249889673 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>4.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>3</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.49812492264165,-7.898482051385098 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>5.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>4</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.54070506710892,-8.100423327255166 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>6.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>5</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.63008743787881,-7.842247514599217 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>7.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>6</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.73204622262638,-7.993433976916532 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>8.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>7</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.75683972446808,-8.082816347686425 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>9.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>8</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.75648039835443,-8.194027779860422 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>10.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>9</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.3135211317551,-7.690252568526193 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>11.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>10</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.51932516334688,-7.89210401286785 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>12.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>11</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.7510006751213,-8.066916167157508 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>13.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>12</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.35897588513154,-7.647402929473692 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>14.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>13</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.71434941152923,-8.107520017999711 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>15.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>14</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.61553473027608,-8.02873776758243 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>16.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>15</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.37649303317187,-7.978072785558088 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>17.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>16</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.68048292531792,-7.837666106650207 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>18.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>17</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.65613858111827,-8.073204374146346 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>19.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>18</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.58157841253636,-8.072395890390638 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>20.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>19</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.52435572893795,-8.0826366846296 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>21.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>20</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.21012504255293,-7.675969355508693 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>22.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>21</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.697730578773,-7.926509488249628 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>23.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>22</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.20275885722316,-7.974030366779551 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>24.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>23</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.66575055465836,-7.986337286171988 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>25.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>24</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.58777678799679,-7.909800823965004 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>26.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>25</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.53872877348385,-8.120006600448972 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>27.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>26</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.77004495914463,-8.082906179214836 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>28.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>27</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.63278238373117,-8.033139512474614 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>29.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>28</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.72971060288766,-7.844672965866339 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>30.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>29</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.49749610194277,-7.964957382409943 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>31.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>30</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.31325163716986,-7.656206419258064 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>32.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>31</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.48671631853334,-8.105364061317825 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>33.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>32</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.69072371955689,-7.929563760215634 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>34.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>33</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.10214754540176,-7.87000545687851 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>35.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>34</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.06890987988935,-7.880066588060648 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>36.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>35</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.51303695635804,-8.037810751952037 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>37.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>36</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.30148370694789,-8.01355623928081 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>38.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>37</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.3601436950009,-8.023437707406124 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>39.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>38</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.52417606588112,-7.865693543514736 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>40.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>39</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.77291956805381,-7.859046010412252 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>41.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>40</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.44692095144684,-7.859944325696371 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>42.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>41</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.17940265983604,-7.650277538382875 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>43.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>42</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.43120043397475,-8.01445455456493 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>44.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>43</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.33265524730683,-7.801104674586543 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>45.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>44</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.46524658324287,-8.059190655714081 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>46.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>45</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.64688593369185,-7.928755276459927 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>47.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>46</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.51815735347752,-7.946991076727553 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>48.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>47</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.25683743732715,-7.698966226782153 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>49.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>48</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.16206517485254,-7.868927478537566 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>50.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>49</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.57016980842803,-8.08398415755578 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>51.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>50</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.49947239556784,-7.862818934605554 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>52.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>51</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.71399008541557,-8.024246191161831 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>53.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>52</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.19952492220033,-7.742714181118774 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>54.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>53</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.52228960378447,-8.01032230425798 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>55.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>54</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.42473256392908,-8.020383435440118 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>56.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>55</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.41853418846867,-8.068443303140512 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>57.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>56</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.61661270861701,-8.141925493381489 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>58.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>57</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.50854537993744,-8.030803892735904 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>59.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>58</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.68605248007945,-7.841708525428745 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>60.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>59</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.4300326241054,-7.991817009405117 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>61.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>60</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.3639166191942,-7.89300232815197 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>62.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>61</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.15838208218766,-7.691150883810313 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>63.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>62</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.37083364688192,-7.708757863379056 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>64.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>63</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.70940867746657,-7.8879717625609 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>65.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>64</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.24318304500854,-7.854554433991654 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>66.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>65</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.20024357442762,-7.7966130981659445 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>67.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>66</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.7915146944351,-8.182529344223692 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>68.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>67</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.7299800974729,-7.937918092357946 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>69.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>68</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.6819202297725,-7.915639873311782 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>70.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>69</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.17437209424497,-7.92067043890285 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>71.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>70</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.5654087374222,-7.93719944013065 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>72.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>71</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.64508930312361,-7.818352328041637 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>73.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>72</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.54052540405209,-7.994961112899535 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>74.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>73</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.42131896584944,-8.070509428293986 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>75.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>74</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.64940121648738,-8.109586143153185 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>76.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>75</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.20671144447329,-7.929473928687222 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>77.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>76</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.36158099945548,-7.997656058751894 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>78.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>77</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.15820241913083,-7.74945154574967 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>79.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>78</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.45922787083927,-7.811614963410741 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>80.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>79</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.3315772689659,-7.853117129537063 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>81.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>80</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.46192281669164,-7.712530787572358 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>82.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>81</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.58175807559319,-7.8230235675190585 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>83.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>82</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.66727769064136,-7.824101545860002 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>84.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>83</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.70904935135292,-8.132942340540295 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>85.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>84</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.56442059060967,-8.04212266531581 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>86.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>85</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.09046944670821,-7.919053471391436 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>87.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>86</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.50351481434637,-7.802452147512722 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>88.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>87</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.19350620979672,-7.80191315834225 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>89.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>88</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.43542251581012,-8.087487587163846 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>90.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>89</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.41682738942883,-7.611829644222559 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>91.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>90</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.55004754606377,-7.850961172855176 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>92.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>91</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.39805259999073,-7.6014990184551845 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>93.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>92</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.38260157710388,-7.647582592530516 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>94.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>93</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.52390657129588,-7.907914361868354 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>95.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>94</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.35879622207472,-7.681898236383882 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>96.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>95</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.19907576455826,-7.790504554233932 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>97.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>96</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.33696716067061,-7.642552026939447 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>98.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>97</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.63493834041306,-8.1194676112785 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>99.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>98</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.18048063817699,-7.848805216173289 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>100.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>99</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.65380296137957,-8.006190053951029 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>101.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>100</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.1174189052318,-7.900099018896514 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>102.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>101</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.3353501931592,-7.865603711986324 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>103.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>102</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.47413990455566,-7.8012843376433665 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>104.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>103</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.3128923110562,-7.98732543298452 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>105.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>104</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.59631078319592,-7.983911834904865 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>106.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>105</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.23024730491721,-7.945733435329785 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>107.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>106</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.47126529564648,-7.824730366558886 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>108.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>107</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.4578803979131,-7.6518945058942895 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>109.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>108</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.41862401999708,-7.697708585384386 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>110.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>109</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.37927781055264,-7.829401606036307 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>111.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>110</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.67724899029508,-8.0743721840157 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>112.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>111</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.1399666188632,-7.900458345010161 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>113.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>112</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.70267131283566,-7.81987946402464 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>114.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>113</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.44009375528753,-7.759512676931808 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>115.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>114</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.30651427253896,-7.762836443483051 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>116.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>115</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.3955373171952,-7.803619957382077 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>117.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>116</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.34612997656863,-7.768226335187768 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>118.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>117</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.27426475383906,-7.815298056075631 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>119.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>118</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.40541878532052,-7.726095348362563 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>120.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>119</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.31918051804504,-7.759692339988632 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>121.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>120</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.59370566887198,-7.957321702494927 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>122.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>121</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.63251288914593,-7.961723447387113 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>123.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>122</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.466144898527,-7.944385962403606 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>124.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>123</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.43793779860565,-7.664021762229903 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>125.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>124</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.37254044592174,-7.860932472508902 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>126.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>125</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.36176066251231,-7.8163760344165745 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>127.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>126</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.57511054249069,-7.988044085211815 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>128.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>127</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.388081300337,-7.852578140366591 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>129.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>128</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.42212744960514,-7.690162736997782 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>130.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>129</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.30813124005037,-7.737773447056116 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>131.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>130</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.4293139718781,-7.704625613072106 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>132.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>131</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.39948990444533,-7.7824197166768565 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>133.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>132</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.3985017576328,-7.755649921210095 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>134.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>133</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.27462407995272,-7.970976094813544 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>135.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>134</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.24192540361076,-7.95974715376205 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>136.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>135</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.20841824351311,-7.765082231693349 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>137.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>136</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.44539381546383,-7.828233796166952 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>138.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>137</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.30408882127183,-7.668603170178913 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>139.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>138</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.23572702815034,-7.9699879480010125 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>140.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>139</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.4301224556338,-7.716124048708836 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>141.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>140</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.47045681189077,-8.036014121383797 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>142.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>141</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.267707052265,-7.7739755530061325 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>143.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>142</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.27561222676525,-7.71819017386231 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>144.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>143</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.37981679972312,-7.786551966983806 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>145.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>144</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.31468894162445,-7.707769716566524 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>146.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>145</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.31019736520385,-7.856890053730365 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>147.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>146</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.43587167345217,-7.7225020872260846 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>148.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>147</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.33355356259096,-7.699595047481036 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>149.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>148</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.32295344223834,-7.946811413670729 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>150.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>149</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.24183557208235,-7.715944385652012 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>151.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>150</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.40209501876927,-7.857518874429249 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>152.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>151</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.383499892388,-7.738492099283412 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>153.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>152</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.33427221481826,-7.974569355950022 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>154.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>153</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.4654262462997,-7.925341678380272 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>155.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>154</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.15865157677288,-7.879437767361765 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>156.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>155</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.7652838881388,-7.860483314866843 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>157.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>156</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.46228214280528,-7.7753230259323125 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>158.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>157</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.36957600548415,-7.851320498968824 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>159.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>158</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.30822107157879,-7.766609367676353 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>160.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>159</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.20751992822899,-7.868747815480742 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>161.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>160</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.33876379123885,-7.646953771831632 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>162.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>161</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.36104201028502,-7.854554433991654 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>163.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>162</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.40883238340017,-7.810536985069797 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>164.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>163</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.3331044049489,-7.761309307500047 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>165.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>164</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.47548737748184,-7.734539512033286 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>166.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>165</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.59101072301961,-7.972143904682899 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>167.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>166</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.3339128887046,-7.869196973122802 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>168.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>167</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.38736264810971,-7.7626567804262265 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>169.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>168</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.42500205851432,-7.711991798401886 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>170.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>169</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.3632877984953,-7.822125252234939 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>171.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>170</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.37110314146716,-7.829401606036307 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>172.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>171</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.42392408017338,-7.83829492734909 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>173.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>172</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.31540759385175,-7.952830126074329 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>174.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>173</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.39257287675761,-7.85760870595766 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>175.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>174</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.71479856917128,-7.881773387100475 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>176.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>175</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.40739507894558,-7.810087827427738 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>177.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>176</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.65586908653304,-8.083085842271661 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>178.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>177</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.34235705237533,-7.801104674586543 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>179.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>178</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.27740885733348,-7.78762994532475 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>180.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>179</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.33939261193774,-7.9186941452777875 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>181.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>180</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.20141138429697,-7.896595589288448 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>182.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>181</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.35834706443265,-7.8337135194000815 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>183.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>182</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.38960843632002,-7.753404132999796 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>184.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>183</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.2233302772295,-7.7748738682902525 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>185.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>184</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.46803136062366,-7.83640846525244 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>186.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>185</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.71363075930192,-7.826886323240773 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>187.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>186</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.46946866507824,-7.7706517864548905 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>188.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>187</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.10897474156107,-7.887342941862016 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>189.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>188</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.41341379134919,-7.688815264071602 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>190.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>189</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.27956481401537,-7.725376696135267 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>191.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>190</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.47943996473197,-7.789696070478224 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>192.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>191</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.41170699230936,-7.829671100621543 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>193.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>192</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.4443158371229,-7.6603386695650135 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>194.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>193</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.3654437551772,-7.826257502541889 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>195.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>194</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.30283117987408,-7.897583736100979 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>196.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>195</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.2511780510372,-7.821137105422408 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>197.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>196</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.469199170493,-7.797331750393241 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>198.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>197</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.60017353891763,-7.970257442586249 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>199.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>198</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.24417119182107,-7.799218212489891 </coordinates>
+  </Point>
+</Placemark><Placemark>
+  <ExtendedData>
+    <Data name='nomor'>
+      <value>200.0</value>
+    </Data>
+    <Data name='system:index'>
+      <value>199</value>
+    </Data>
+  </ExtendedData>
+  <Point>
+    <coordinates>110.2541424914748,-7.941152027380776 </coordinates>
+  </Point>
+</Placemark>
+</Document>
+</kml>

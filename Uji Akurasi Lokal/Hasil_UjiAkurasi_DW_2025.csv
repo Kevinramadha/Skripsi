@@ -1,0 +1,10 @@
+Metrik,Nilai,IK 95%
+Jumlah titik sampel,200,-
+Overall Accuracy (tak terbobot),80.50%,"[74.46%, 85.39%]"
+Overall Accuracy (terbobot luas),89.95%,"[86.05%, 93.85%]"
+User's Accuracy - Terbangun,66.00%,"[56.67%, 75.33%]"
+User's Accuracy - Bukan terbangun,95.00%,"[90.71%, 99.29%]"
+Producer's Accuracy - Terbangun,73.58%,"[56.66%, 90.50%]"
+Producer's Accuracy - Bukan terbangun,92.98%,"[91.16%, 94.80%]"
+F1-score kelas terbangun,77.19%,-
+Koefisien Kappa,0.6100,"[0.5002, 0.7198]"

@@ -1,0 +1,597 @@
+{UTF-8}
+PDRB Sektor Pariwisata=Data PDRB(Time)
+	~	Miliar Rupiah
+	~		|
+
+Data PDRB([(2016,0)-(2025,20000)],(2016,10694),(2017,11347.6),(2018,12101),(2019,13104.4\
+		),(2020,10926.8),(2021,12097.2),(2022,13672.6),(2023,14809.2),(2024,15873.8),(2025,\
+		16947.6))
+	~	Miliar Rupiah
+	~		|
+
+Intensitas Tenaga Kerja=Intensitas Tenaga Kerja Awal * EXP(-Laju Kenaikan Produktivitas\
+		 * (Time - Tahun Dasar Intensitas Tenaga Kerja))
+	~	Jiwa/Miliar Rupiah
+	~		|
+
+Tahun Dasar Intensitas Tenaga Kerja=2025
+	~	Tahun
+	~	Tahun acuan Intensitas Tenaga Kerja Awal (TK 2025 ÷ PDRB 2025).
+	|
+
+Batas Maksimum Efek ODTW=1.5
+	~	Dmnl [1,1.875]
+	~	Batas kejenuhan efek ODTW terhadap daya tarik: pertambahan ODTW paling \
+		banyak menaikkan komponen daya tarik 50% di atas kondisi tahun dasar. \
+		Syarat kestabilan: Bobot ODTW × Batas Maksimum < Laju Penurunan Dasar ÷ \
+		Laju Pertumbuhan Eksternal (0,40 × 1,5 = 0,60 < 0,75). Diuji sensitivitas \
+		1,25–1,875.
+	|
+
+Daya Tarik Destinasi Wisata=Bobot ODTW * MIN(Batas Maksimum Efek ODTW, (Jumlah Objek Daya Tarik Wisata\
+		 / ODTW Referensi)^Elastisitas Daya Tarik ODTW) + Bobot Kepadatan * MIN(1, Kepadatan Referensi\
+		 / Kepadatan Wisatawan) + Bobot Daya Dukung Lahan * (Rasio Daya Dukung Lahan / Rasio Daya Dukung Lahan Referensi\
+		)
+	~	Dmnl
+	~	Komponen kepadatan dibatasi maksimum 1 karena kepadatan di bawah kondisi \
+		tahun dasar tidak menambah daya tarik di atas normal. Kepadatan berperan \
+		sebagai faktor pembatas (qualifying determinant), bukan pendorong daya \
+		tarik (Ritchie & Crouch, 2003; Butler, 1980).
+	|
+
+Laju Konversi Lahan Pariwisata=((Laju Konstruksi Hotel dan Akomodasi * Lahan Per Hotel dan Akomodasi\
+		) + ("Laju Pembangunan/Penambahan ODTW" * Lahan Per ODTW)) * (1 - Kebijakan Konservasi Lahan\
+		) * (Rasio Daya Dukung Lahan / Rasio Daya Dukung Lahan Referensi)
+	~	Hektar/Tahun
+	~	Konversi lahan menjadi lahan terbangun akibat konstruksi akomodasi dan pembangunan \
+		ODTW (koefisien kebutuhan lahan per unit), dikurangi proporsi yang ditahan \
+		Kebijakan Konservasi Lahan. Memakai laju pembangunan bruto karena lahan \
+		tidak kembali saat usaha tutup.
+		
+		Konversi dibatasi ketersediaan lahan melalui faktor Rasio Daya Dukung \
+		Lahan terhadap nilai referensinya, yang bernilai 1 pada tahun dasar dan \
+		menuju nol saat lahan habis.
+	|
+
+"Tingkat Penghunian Kamar (TPK)"=MIN(1, Rasio Permintaan terhadap Kapasitas Kamar)
+	~	Dmnl
+	~	Tingkat penghunian kamar sesuai definisi BPS: malam kamar terpakai dibagi \
+		malam kamar tersedia, dibatasi maksimum 100% karena kamar terpakai tidak \
+		dapat melebihi kamar tersedia.
+	~	:SUPPLEMENTARY 
+	|
+
+Laju Konstruksi Hotel dan Akomodasi=Investasi Sektor Pariwisata * Sensitivitas Konstruksi terhadap TPK\
+		 * MAX(0, Rasio Permintaan terhadap Kapasitas Kamar - TPK Ambang)
+	~	Unit Akomodasi/Tahun
+	~	Konstruksi akomodasi baru: investasi (kemampuan membangun) dikali selisih \
+		TPK di atas ambang (keinginan membangun); respons pasokan terhadap \
+		okupansi (Wheaton & Rossoff, 1998).
+	|
+
+Rasio Permintaan terhadap Kapasitas Kamar=(Total Malam Menginap / Tingkat Penghunian Ganda Kamar\
+		) / (Jumlah Hotel dan Akomodasi * "Rata-rata Kamar per Unit Akomodasi" * Malam Tersedia per Kamar\
+		)
+	~	Dmnl
+	~	Perbandingan permintaan malam kamar terhadap kapasitas malam kamar \
+		tersedia. Nilai > 1 menunjukkan permintaan melampaui kapasitas (permintaan \
+		tak terlayani) dan menjadi sinyal pembangunan akomodasi baru.
+	|
+
+"Laju Pembangunan/Penambahan ODTW"=Investasi Sektor Pariwisata * Sensitivitas ODTW terhadap Investasi\
+		 + Laju Pembangunan ODTW Non Investasi
+	~	Unit/Tahun
+	~	output dihasilkan dari dua faktor produksi, yaitu modal (K) dan tenaga \
+		kerja (L), seperti dalam fungsi produksi Cobb-Douglas. Di model ini, \
+		"output"-nya adalah ODTW baru. Bentuk penjumlahan linear adalah \
+		penyederhanaan supaya masing-masing jalur bisa dibaca terpisah sebagai \
+		loop R2 (investasi) dan R3 (tenaga kerja).
+	|
+
+Waktu Penyesuaian Tenaga Kerja=1
+	~	Tahun [1,3]
+	~		|
+
+Laju Kenaikan Produktivitas=0.0110205
+	~	1/Tahun [0,0.05]
+	~		|
+
+Elastisitas Daya Tarik ODTW=0.3
+	~	Dmnl [0,1]
+	~	Ditambahkan untuk mencegah model meledak akibat komponen ODTW linear. Rentang 0–1 \
+		(1 = linear). Diuji sensitivitas.
+		Elastisitas daya tarik terhadap jumlah ODTW. Nilai < 1 mencerminkan \
+		diminishing returns; 1 = linear. Ditambahkan untuk mencegah model meledak \
+		akibat komponen ODTW linear. Diuji sensitivitas.
+	|
+
+Laju Penyerapan Tenaga Kerja Pariwisata=MAX(0, Laju Keluar Tenaga Kerja Pariwisata + \
+		(Tenaga Kerja Dibutuhkan - Tenaga Kerja Pariwisata
+	) / Waktu Penyesuaian Tenaga Kerja)
+	~	Jiwa/Tahun
+	~		|
+
+Intensitas Tenaga Kerja Awal=21.5366
+	~	Jiwa/Miliar Rupiah
+	~		|
+
+Tenaga Kerja Dibutuhkan=PDRB Sektor Pariwisata * Intensitas Tenaga Kerja
+	~	Jiwa
+	~		|
+
+Kebijakan Konservasi Lahan=0
+	~	Dmnl [0,1]
+	~	Tuas kebijakan konservasi lahan (rentang 0–1). 0 = tanpa konservasi \
+		(BAU).
+	|
+
+Lahan Terbangun= INTEG (Laju Konversi Lahan Non Pariwisata+Laju Konversi Lahan Pariwisata\
+		,
+		44561.1)
+	~	Hektar
+	~		|
+
+Laju Konversi Dasar=0.0436052
+	~	1/Tahun
+	~		|
+
+Laju Pembangunan ODTW Non Investasi=5.427
+	~	Unit/Tahun [0,20]
+	~	Pembangunan ODTW oleh pemerintah dan masyarakat (BUMDes, Pokdarwis, komunitas), \
+		eksogen. Diturunkan
+		dari identitas stock-flow ODTW 2015–2025 dengan porsi pengelola non-swasta 42,91% \
+		(Statistik ODTW 2024,
+		BPS).
+	|
+
+Kepadatan Wisatawan=Jumlah Wisatawan/Luas Lahan Tersedia
+	~	Kunjungan/Hektar
+	~	Intensitas kunjungan wisatawan per hektar wilayah DIY (tourism density). \
+		Luas wilayah saling meniadakan dalam rasio terhadap Kepadatan Referensi.
+	|
+
+Laju Konversi Lahan Non Pariwisata=Laju Konversi Dasar * Lahan Terbangun * Rasio Daya Dukung Lahan
+	~	Hektar/Tahun
+	~		|
+
+Laju Kedatangan Wisatawan=Jumlah Wisatawan * Laju Pertumbuhan Eksternal * Daya Tarik Destinasi Wisata
+	~	Kunjungan/Tahun
+	~		|
+
+"Rata-rata Kamar per Unit Akomodasi"=21.4168
+	~	Kamar/Unit Akomodasi
+	~		|
+
+Luas Lahan Tersedia=317036
+	~	Hektar
+	~		|
+
+Rasio Daya Dukung Lahan=MAX(0, 1 - (Lahan Terbangun / Luas Lahan Tersedia))
+	~	Dmnl
+	~	Proporsi lahan yang belum terbangun terhadap luas wilayah; dibatasi \
+		minimum nol karena lahan tersisa tidak dapat bernilai negatif
+	|
+
+Proporsi Wisatawan Menginap=0.2058
+	~	Dmnl
+	~		|
+
+Total Malam Menginap=Jumlah Wisatawan * Proporsi Wisatawan Menginap * "Rata-rata Lama Menginap Tamu"
+	~	Malam
+	~		|
+
+Tingkat Penghunian Ganda Kamar=2.07
+	~	Dmnl
+	~		|
+
+Bobot Daya Dukung Lahan=0.25
+	~	Dmnl
+	~		|
+
+Rasio Daya Dukung Lahan Referensi=0.826425
+	~	Dmnl
+	~		|
+
+Bobot Kepadatan=0.35
+	~	Dmnl
+	~		|
+
+Bobot ODTW=0.4
+	~	Dmnl
+	~		|
+
+Insentif Kebijakan=0
+	~	Dmnl [0,0.5]
+	~	Tuas kebijakan insentif investasi pariwisata. 0 = BAU; 0,1 = Sustainable \
+		Development; 0,3 = Development Priority. Nilai 0,1 berarti investasi 10% \
+		lebih tinggi dari pola historis.
+	|
+
+Investasi Sektor Pariwisata=(PDRB Sektor Pariwisata * Rasio Investasi terhadap PDRB) \
+		* (1 + Insentif Kebijakan)
+	~	Miliar Rupiah
+	~		|
+
+Jumlah Hotel dan Akomodasi= INTEG (Laju Konstruksi Hotel dan Akomodasi-Laju Demolisi Hotel dan Akomodasi\
+		,
+		1170)
+	~	Unit Akomodasi
+	~		|
+
+Jumlah Objek Daya Tarik Wisata= INTEG ("Laju Pembangunan/Penambahan ODTW"-Laju Penutupan ODTW\
+		,
+		158)
+	~	Unit
+	~		|
+
+Jumlah Wisatawan= INTEG (Laju Kedatangan Wisatawan-Laju Penurunan Wisatawan,
+		1.50663e+07)
+	~	Kunjungan
+	~		|
+
+Kepadatan Referensi=128.363
+	~	Kunjungan/Hektar
+	~		|
+
+Lahan Per Hotel dan Akomodasi=0.1
+	~	Hektar/Unit Akomodasi
+	~		|
+
+Lahan Per ODTW=0.5
+	~	Hektar/Unit
+	~		|
+
+Laju Demolisi Dasar=0.05
+	~	1/Tahun [0,0.1]
+	~	Fraksi unit akomodasi yang berhenti beroperasi per tahun (1 ÷ rata-rata \
+		umur operasi; Sterman, 2000). Ditetapkan melalui triangulasi: batas bawah \
+		umur rencana bangunan 50 tahun (0,02); acuan bangunan permanen 20 tahun \
+		(PP 36/2005; UU PPh) dan proksi laju penutupan ODTW DIY (0,05); batas atas \
+		penurunan akomodasi DIY 2020–2021 (0,082). Diuji sensitivitas \
+		0,02–0,08, berpasangan dengan Sensitivitas Konstruksi terhadap TPK.
+	|
+
+Laju Demolisi Hotel dan Akomodasi=Jumlah Hotel dan Akomodasi * Laju Demolisi Dasar
+	~	Unit Akomodasi/Tahun
+	~		|
+
+Laju Keluar Tenaga Kerja Pariwisata=Tenaga Kerja Pariwisata * Laju Keluar Dasar Tenaga Kerja
+	~	Jiwa/Tahun
+	~		|
+
+Laju Penurunan Wisatawan=Jumlah Wisatawan*Laju Penurunan Dasar
+	~	Kunjungan/Tahun
+	~		|
+
+Laju Penutupan Dasar ODTW=0.0499327
+	~	1/Tahun [0,0.1]
+	~	Diestimasi dari distribusi lama beroperasi ODTW DIY (Statistik ODTW 2024, \
+		BPS) dengan teori populasi stabil: porsi umur > T = e^(−(d+g)T); \
+		rata-rata umur usaha ±20 tahun. Diuji sensitivitas 0,01–0,07.
+	|
+
+Laju Penutupan ODTW=Jumlah Objek Daya Tarik Wisata * Laju Penutupan Dasar ODTW
+	~	Unit/Tahun
+	~		|
+
+Laju Pertumbuhan Eksternal=0.26864
+	~	1/Tahun
+	~		|
+
+Malam Tersedia per Kamar=329.03
+	~	Malam/Kamar [200,365]
+	~	Malam operasional efektif per kamar per tahun. Malam kamar tersedia versi \
+		BPS dihitung dari hari hotel beroperasi, bukan hari kalender. Diturunkan: \
+		Σ(Malam Tamu ÷ TPG) ÷ Σ(TPK BPS × Jumlah Kamar) 2015–2025, sehingga \
+		level TPK model sebanding dengan TPK BPS.
+	|
+
+ODTW Referensi=201
+	~	Unit
+	~		|
+
+Pengeluaran per Kunjungan=0.00272021
+	~	Miliar Rupiah/Kunjungan
+	~		|
+
+Pengeluaran Wisatawan=Jumlah Wisatawan * Pengeluaran per Kunjungan
+	~	Miliar Rupiah
+	~		~	:SUPPLEMENTARY 
+	|
+
+Rasio Investasi terhadap PDRB=0.0488174
+	~	Dmnl
+	~	Σ Investasi PMA+PMDN ÷ Σ PDRB ADHK pariwisata 2015–2025.
+	|
+
+Laju Penurunan Dasar=0.20148
+	~	1/Tahun
+	~		|
+
+"Rata-rata Lama Menginap Tamu"=1.427
+	~	Malam/Kunjungan
+	~		|
+
+Sensitivitas Konstruksi terhadap TPK=2.31385
+	~	Unit Akomodasi/(Miliar Rupiah*Dmnl*Tahun) [0,6]
+	~	Diturunkan dari identitas stock-flow hotel 2015–2025: Σ(ΔHotel + Laju \
+		Demolisi Dasar × Hotel) ÷ Σ[Investasi × MAX(0, TPK − TPK Ambang)]. \
+		Dihitung ulang berpasangan jika TPK Ambang atau Laju Demolisi Dasar diubah \
+		saat uji sensitivitas
+	|
+
+Sensitivitas ODTW terhadap Investasi=0.01052
+	~	Unit/(Miliar Rupiah*Tahun)
+	~	Diturunkan dari identitas stock-flow ODTW 2015–2025 dengan porsi \
+		pengelola swasta 57,09% dibagi ΣInvestasi BKPM 2016–2025. Analog \
+		kebalikan ICOR (Harrod-Domar).
+	|
+
+Tenaga Kerja Pariwisata= INTEG (Laju Penyerapan Tenaga Kerja Pariwisata-Laju Keluar Tenaga Kerja Pariwisata\
+		,
+		263878)
+	~	Jiwa
+	~		|
+
+Laju Keluar Dasar Tenaga Kerja=0.03
+	~	1/Tahun [0,0.2]
+	~	Laju keluar = 1 ÷ rata-rata masa kerja (±34 tahun; Sterman, 2000; PP \
+		45/2015). Batas bawah, hanya mencakup pensiun. Diuji sensitivitas 0,05 dan \
+		0,10.
+	|
+
+Rasio Nilai Tambah Pariwisata=0.153094
+	~	Dmnl
+	~		~	:SUPPLEMENTARY 
+	|
+
+TPK Ambang=0.275
+	~	Dmnl [0,0.5]
+	~	TPK minimum agar konstruksi akomodasi baru terjadi (konsep tingkat hunian \
+		alamiah; Wheaton & Rossoff, 1998). Diapit data DIY: konstruksi masih \
+		positif pada TPK 2020 (0,289) dan terhenti pada TPK 2021 (0,275); korelasi \
+		tertinggi pada uji kecocokan 2016–2025. Diuji sensitivitas 0,20–0,35.
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 2025
+	~	Tahun
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 2016
+	~	Tahun
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP 
+	~	Tahun [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Tahun [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,48,2
+10,1,Jumlah Wisatawan,249,568,49,26,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,2,48,56,568,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,5,1,100,0,0,22,0,192,0,-1--1--1,,1|(170,568)|
+1,4,5,2,4,0,0,22,0,192,0,-1--1--1,,1|(97,568)|
+11,5,0,133,568,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,Laju Penurunan Wisatawan,133,602,46,26,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,7,48,460,565,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,8,10,7,100,0,0,22,0,192,0,-1--1--1,,1|(423,565)|
+1,9,10,1,4,0,0,22,0,192,0,-1--1--1,,1|(341,565)|
+11,10,0,389,565,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,11,Laju Kedatangan Wisatawan,389,599,46,26,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,12,Daya Tarik Destinasi Wisata,646,934,54,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,13,12,11,1,0,0,0,0,192,0,-1--1--1,,1|(409,810)|
+10,14,Laju Penurunan Dasar,-3,690,60,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,15,Total Malam Menginap,219,350,60,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,16,Laju Pertumbuhan Eksternal,528,652,50,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,17,16,11,1,0,0,0,0,192,0,-1--1--1,,1|(449,629)|
+1,18,1,6,1,0,0,0,0,192,0,-1--1--1,,1|(199,645)|
+1,19,14,6,1,0,0,0,0,192,0,-1--1--1,,1|(31,651)|
+1,20,1,15,1,0,0,0,0,192,0,-1--1--1,,1|(215,442)|
+10,21,Pengeluaran Wisatawan,161,937,63,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,22,1,21,1,0,0,0,0,192,0,-1--1--1,,1|(253,775)|
+10,23,Pengeluaran per Kunjungan,-10,877,46,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,24,23,21,1,0,0,0,0,192,0,-1--1--1,,1|(47,948)|
+10,25,Jumlah Hotel dan Akomodasi,1112,178,47,26,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,26,48,930,177,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,27,29,26,100,0,0,22,0,192,0,-1--1--1,,1|(968,177)|
+1,28,29,25,4,0,0,22,0,192,0,-1--1--1,,1|(1036,177)|
+11,29,0,1002,177,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,30,Laju Konstruksi Hotel dan Akomodasi,1002,211,66,26,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,31,48,1303,178,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,32,34,25,100,0,0,22,0,192,0,-1--1--1,,1|(1189,178)|
+1,33,34,31,4,0,0,22,0,192,0,-1--1--1,,1|(1262,178)|
+11,34,0,1226,178,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,35,Laju Demolisi Hotel dan Akomodasi,1226,212,62,26,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,36,"Tingkat Penghunian Kamar (TPK)",659,348,53,26,8,3,0,16,-1,0,0,0,0-0-0,0-0-0,||U|0-0-0,0,0,0,0,0,0
+10,37,Investasi Sektor Pariwisata,1373,520,46,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,38,37,30,1,0,0,0,0,192,0,-1--1--1,,1|(1216,330)|
+10,39,Rasio Nilai Tambah Pariwisata,1924,650,49,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,40,Insentif Kebijakan,1480,364,48,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,41,40,37,1,0,0,0,0,192,0,-1--1--1,,1|(1447,479)|
+10,42,Tenaga Kerja Pariwisata,1959,988,62,26,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,43,48,1729,984,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,44,46,43,100,0,0,22,0,192,0,-1--1--1,,1|(1766,984)|
+1,45,46,42,4,0,0,22,0,192,0,-1--1--1,,1|(1851,984)|
+11,46,0,1800,984,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,47,Laju Penyerapan Tenaga Kerja Pariwisata,1800,1018,64,26,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,48,Jumlah Objek Daya Tarik Wisata,1295,786,63,26,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,49,48,1536,788,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,50,52,49,100,0,0,22,0,192,0,-1--1--1,,1|(1498,788)|
+1,51,52,48,4,0,0,22,0,192,0,-1--1--1,,1|(1408,788)|
+11,52,0,1465,788,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,53,"Laju Pembangunan/Penambahan ODTW",1465,830,65,34,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,54,37,53,1,0,0,0,0,192,0,-1--1--1,,1|(1458,696)|
+1,55,48,12,1,0,0,0,0,192,0,-1--1--1,,1|(1075,1004)|
+10,56,Kepadatan Wisatawan,386,943,46,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,57,56,12,1,0,0,0,0,192,0,-1--1--1,,1|(477,962)|
+1,58,1,56,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,59,Lahan Terbangun,842,600,47,26,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,60,48,1036,600,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,61,63,60,100,0,0,22,0,192,0,-1--1--1,,1|(997,600)|
+1,62,63,59,4,0,0,22,0,192,0,-1--1--1,,1|(923,600)|
+11,63,0,963,600,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,64,Laju Konversi Lahan Pariwisata,963,634,53,26,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,65,1,11,1,0,0,0,0,192,0,-1--1--1,,1|(329,614)|
+10,66,Sensitivitas Konstruksi terhadap TPK,847,323,58,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,67,66,30,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,68,TPK Ambang,959,353,46,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,69,68,30,1,0,0,0,0,192,0,-1--1--1,,1|(986,275)|
+10,70,Laju Demolisi Dasar,1330,300,53,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,71,70,35,1,0,0,0,0,192,0,-1--1--1,,1|(1239,271)|
+1,72,25,35,1,0,0,0,0,192,0,-1--1--1,,1|(1194,168)|
+10,73,Sensitivitas ODTW terhadap Investasi,1368,663,50,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,74,73,53,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,75,Rasio Investasi terhadap PDRB,1590,479,63,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,76,75,37,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,77,Bobot ODTW,465,1060,46,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,78,Bobot Kepadatan,796,1124,47,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,79,77,12,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,80,78,12,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,81,Kepadatan Referensi,657,1102,55,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,82,81,12,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,83,ODTW Referensi,525,1120,46,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,84,83,12,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,85,Lahan Per Hotel dan Akomodasi,993,777,66,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,86,Lahan Per ODTW,1099,720,46,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,87,85,64,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,88,86,64,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,89,53,64,1,0,0,0,0,192,0,-1--1--1,,1|(1235,702)|
+1,90,30,64,1,0,0,0,0,192,0,-1--1--1,,1|(1037,430)|
+12,91,48,2172,988,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,92,94,42,100,0,0,22,0,192,0,-1--1--1,,1|(2053,988)|
+1,93,94,91,4,0,0,22,0,192,0,-1--1--1,,1|(2129,988)|
+11,94,0,2091,988,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,95,Laju Keluar Tenaga Kerja Pariwisata,2091,1022,64,26,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,96,42,95,1,0,0,0,0,192,0,-1--1--1,,1|(2021,1052)|
+10,97,Laju Keluar Dasar Tenaga Kerja,2095,1128,66,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,98,97,95,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+12,99,48,1088,786,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,100,102,48,100,0,0,22,0,192,0,-1--1--1,,1|(1201,786)|
+1,101,102,99,4,0,0,22,0,192,0,-1--1--1,,1|(1128,786)|
+11,102,0,1165,786,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,103,Laju Penutupan ODTW,1165,820,59,26,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,104,48,103,1,0,0,0,0,192,0,-1--1--1,,1|(1195,846)|
+10,105,PDRB Sektor Pariwisata,1737,784,64,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,106,105,37,1,0,0,0,0,192,0,-1--1--1,,1|(1590,630)|
+10,107,Laju Penutupan Dasar ODTW,1079,913,58,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,108,107,103,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,109,"Rata-rata Lama Menginap Tamu",2,309,52,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,110,109,15,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,111,Malam Tersedia per Kamar,304,199,55,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,112,Bobot Daya Dukung Lahan,845,977,46,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,113,112,12,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,114,Rasio Daya Dukung Lahan,658,793,51,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,115,59,114,1,0,0,0,0,192,0,-1--1--1,,1|(730,681)|
+1,116,114,12,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,117,Rasio Daya Dukung Lahan Referensi,760,843,51,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,118,117,12,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,119,Tingkat Penghunian Ganda Kamar,430,109,53,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,120,Proporsi Wisatawan Menginap,175,251,53,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,121,120,15,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,122,"Rata-rata Kamar per Unit Akomodasi",449,361,65,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,123,Luas Lahan Tersedia,499,727,54,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,124,123,114,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,125,123,56,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+12,126,48,643,602,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,127,129,126,100,0,0,22,0,192,0,-1--1--1,,1|(685,602)|
+1,128,129,59,4,0,0,22,0,192,0,-1--1--1,,1|(762,602)|
+11,129,0,724,602,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,130,Laju Konversi Lahan Non Pariwisata,724,636,53,26,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,131,Laju Konversi Dasar,556,529,53,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,132,131,130,1,0,0,0,0,192,0,-1--1--1,,1|(619,625)|
+1,133,59,130,1,0,0,0,0,192,0,-1--1--1,,1|(760,593)|
+1,134,114,130,1,0,0,0,0,192,0,-1--1--1,,1|(661,702)|
+10,135,Kebijakan Konservasi Lahan,1175,574,56,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,136,135,64,1,0,0,0,0,192,0,-1--1--1,,1|(1074,623)|
+10,137,Elastisitas Daya Tarik ODTW,557,842,55,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,138,137,12,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,139,Laju Pembangunan ODTW Non Investasi,1339,966,54,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,140,139,53,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,141,Intensitas Tenaga Kerja Awal,2239,684,61,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,142,Laju Kenaikan Produktivitas,2088,678,46,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,143,Waktu Penyesuaian Tenaga Kerja,1694,1101,52,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,144,Intensitas Tenaga Kerja,2021,775,61,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,145,Tenaga Kerja Dibutuhkan,1782,894,65,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,146,141,144,1,0,0,0,0,192,0,-1--1--1,,1|(2140,743)|
+1,147,142,144,1,0,0,0,0,192,0,-1--1--1,,1|(2037,717)|
+1,148,105,145,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,149,144,145,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,150,145,47,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,151,42,47,1,0,0,0,0,192,0,-1--1--1,,1|(1888,1046)|
+1,152,95,47,1,0,0,0,0,192,0,-1--1--1,,1|(1944,1109)|
+1,153,143,47,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,154,Time,2017,885,24,13,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,155,154,144,1,0,0,0,0,192,0,-1--1--1,,1|(2001,840)|
+10,156,Rasio Permintaan terhadap Kapasitas Kamar,492,243,51,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,157,111,156,1,0,0,0,0,192,0,-1--1--1,,1|(375,204)|
+1,158,122,156,1,0,0,0,0,192,0,-1--1--1,,1|(453,314)|
+1,159,119,156,1,0,0,0,0,192,0,-1--1--1,,1|(464,169)|
+1,160,25,156,1,0,0,0,0,192,0,-1--1--1,,1|(684,112)|
+1,161,15,156,1,0,0,0,0,192,0,-1--1--1,,1|(346,284)|
+1,162,156,36,1,0,0,0,0,192,0,-1--1--1,,1|(577,282)|
+1,163,156,30,1,0,0,0,0,192,0,-1--1--1,,1|(731,211)|
+1,164,114,64,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,165,117,64,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,166,Batas Maksimum Efek ODTW,839,901,58,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,167,166,12,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,168,Tahun Dasar Intensitas Tenaga Kerja,2122,860,60,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,169,168,144,1,0,0,0,0,192,0,-1--1--1,,1|(2064,828)|
+10,170,Data PDRB,1586,702,46,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,171,Time,1599,798,24,13,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,172,170,105,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,173,171,105,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 2
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,11,2
+///---\\\
+:L<%^E!@
+1:Uji P3.vdfx
+4:Time
+5:Tenaga Kerja Pariwisata
+9:Uji P3
+19:48,0
+24:2016
+25:2025
+26:2025
+23:0
+15:0,0,0,0,0,0
+27:0,
+34:0,
+42:0
+72:0
+73:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Vensim Sans|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1

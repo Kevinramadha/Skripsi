@@ -1,0 +1,10 @@
+Metrik,Tak terbobot,Terbobot luas
+Overall Accuracy,80.50%,89.95%
+Precision (User's Acc.),66.00%,66.00%
+Recall (Producer's Acc.),92.96%,73.58%
+Specificity,73.64%,92.98%
+F1-score,77.19%,69.58%
+Balanced Accuracy,83.30%,83.28%
+MCC,0.6374,0.6372
+ROC-AUC,0.9075,0.9412
+PR-AUC,0.8395,0.7694
