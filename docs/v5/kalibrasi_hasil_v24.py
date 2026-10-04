@@ -63,42 +63,56 @@ def outline(s, x, y, w, h, color=RED):
 s = p.slides[0]
 prep(s, 'Kalibrasi: Hasil Tiap Tahap',
      'Lima tahap dijalankan; dari tiga parameter yang dikalibrasi, tidak ada yang diganti')
-C = [('TAHAP 0', 'Membetulkan cara hitung', 'Laju pertumbuhan eksternal (LPE) dan laju penurunan dasar (LPD) wisatawan', [
-        ('Yang dilakukan', 'Rumus untuk menghitung LPE dan LPD dicek ulang terhadap persamaan model.'),
-        ('Hasilnya', 'Rumus awal menganggap daya tarik 2024 bernilai 1, padahal nilainya 0,99223. Setelah dibetulkan: LPE 0,26864 → 0,27726 dan LPD 0,20148 → 0,207945.'),
-        ('Dampak', 'Wisatawan 2050 hanya naik sekitar 1,6%; hasil uji kondisi ekstrem tidak berubah.')],
-      'Nilai dibetulkan, bukan dicari ulang (bukan kalibrasi)', YEL, DARK),
-     ('TAHAP 1', 'Subsistem akomodasi', 'Batas TPK pemicu pembangunan hotel dan laju demolisi (hotel tutup)', [
-        ('Yang dilakukan', '775 pasangan nilai dicoba (batas TPK 0,20–0,35; demolisi 0,02–0,08) dan dibandingkan dengan data hotel (uji P1).'),
-        ('Hasilnya', 'Pasangan terbaik (0,350; 0,060) 11,64% lebih cocok, tetapi letaknya di batas atas yang dicoba. Tanpa data 2019, keunggulannya tinggal 5,74%; pada data dengan COVID justru memburuk; pada P1b hanya 4,89%.'),
-        ('Artinya', 'Keunggulan nilai baru hanya muncul karena satu tahun data yang janggal.')],
-      'Nilai dari data tetap dipakai: batas TPK 0,275; demolisi 0,05', TEAL, WHITE),
-     ('TAHAP 2', 'Subsistem lahan', 'Laju konversi dasar (laju lahan berubah menjadi lahan terbangun)', [
-        ('Yang dilakukan', 'Nilai 0,0034–0,0851 dicoba dan dibandingkan dengan data lahan terbangun (uji P4).'),
-        ('Hasilnya', 'Nilai 0,0639 14,76% lebih cocok dan letaknya di tengah, bukan di tepi. Selisih rata-rata simulasi dan data (U1) turun dari 0,4250 ke 0,0755.'),
-        ('Artinya', 'Memenuhi syarat dipakai (R4), tetapi harus diuji dulu pada model penuh (Tahap 4).')],
-      'Diterima sementara: 0,0639, lalu diuji di Tahap 4', YEL, DARK),
-     ('TAHAP 3', 'Subsistem wisatawan', 'LPE dan LPD (hanya diperiksa, tidak dikalibrasi)', [
-        ('Yang dilakukan', 'Tidak dicari nilai terbaik karena keduanya tidak memenuhi syarat dikalibrasi; hanya dihitung berapa LPE yang diminta data.'),
-        ('Hasilnya', 'Data meminta LPE 0,410–0,490 (nilai dari data 0,27726). Namun banyak pasangan LPE–LPD yang sama cocoknya, jadi data hanya bisa menentukan selisih keduanya, bukan masing-masing nilai.'),
-        ('Penyebab', 'Wisatawan melonjak setelah pandemi (2022–2024, puncak 24,86% per tahun), hal yang tidak dimodelkan.')],
-      'Nilai dari data tetap dipakai: LPE 0,27726; LPD 0,207945', TEAL, WHITE),
-     ('TAHAP 4', 'Uji pada model penuh', 'Laju konversi 0,0639 hasil Tahap 2', [
-        ('Yang dilakukan', 'Nilai 0,0639 dicoba pada model penuh dan uji parsial (13 variabel yang dinilai).'),
-        ('Hasilnya', '12 variabel hampir tidak berubah, tetapi lahan terbangun pada uji penuh menjadi 32,4% kurang cocok (batas toleransi 5%; pemicu M1).'),
-        ('Penyebab', 'Uji P4 mulai 2016 saat lahan masih rendah, jadi laju lebih cepat membantu. Uji penuh mulai 2019 saat lahan sudah tinggi, jadi laju yang sama membuat simulasi melampaui data.')],
-      'Ditolak: laju konversi kembali ke nilai dari data (0,0436)', RED, WHITE)]
+C = [
+ dict(tag='TAHAP 0', title='Membetulkan cara hitung', hfill=GREY,
+      par='LPE dan LPD (laju pertumbuhan dan penurunan wisatawan)', did='Rumus dicek ulang terhadap persamaan model',
+      big=None, rows=[('LPE', '0,26864 → 0,27726'), ('LPD', '0,20148 → 0,207945')], blab='sebelum → sesudah dibetulkan',
+      why='Rumus awal menganggap daya tarik 2024 = 1, padahal 0,99223. Dampaknya kecil: wisatawan 2050 naik sekitar 1,6%.',
+      badge='Dibetulkan, bukan kalibrasi', bfill=YEL, bcol=DARK),
+ dict(tag='TAHAP 1', title='Subsistem akomodasi', hfill=TEAL,
+      par='Batas TPK pemicu pembangunan hotel dan laju demolisi', did='775 pasangan nilai dicoba · uji P1',
+      big='11,64%', bcolr=TEAL, blab='lebih cocok pada nilai terbaik', sub='→ tinggal 5,74% bila data 2019 dibuang',
+      why='Nilai terbaik jatuh di batas atas yang dicoba, dan keunggulannya hanya muncul karena satu tahun data yang janggal.',
+      badge='Nilai dari data tetap dipakai\n(0,275 dan 0,05)', bfill=TEAL, bcol=WHITE),
+ dict(tag='TAHAP 2', title='Subsistem lahan', hfill=TEAL,
+      par='Laju konversi dasar (lahan menjadi lahan terbangun)', did='Nilai 0,0034–0,0851 dicoba · uji P4',
+      big='14,76%', bcolr=TEAL, blab='lebih cocok pada nilai 0,0639', sub='selisih rata-rata (U1): 0,4250 → 0,0755',
+      why='Letaknya di tengah, bukan di tepi, sehingga memenuhi syarat (R4). Namun masih harus diuji pada model penuh.',
+      badge='Diterima sementara\n(0,0639 → diuji di Tahap 4)', bfill=YEL, bcol=DARK),
+ dict(tag='TAHAP 3', title='Subsistem wisatawan', hfill=TEAL,
+      par='LPE dan LPD (hanya diperiksa, tidak dikalibrasi)', did='Berapa LPE yang diminta data?',
+      big='0,41–0,49', bcolr=TEAL, blab='LPE yang diminta data', sub='nilai dari data: 0,27726',
+      why='Banyak pasangan LPE–LPD sama cocoknya, jadi data hanya bisa menentukan selisih keduanya. Penyebab: lonjakan wisatawan setelah pandemi (puncak 24,86% pada 2024).',
+      badge='Nilai dari data tetap dipakai\n(0,27726 dan 0,207945)', bfill=TEAL, bcol=WHITE),
+ dict(tag='TAHAP 4', title='Uji pada model penuh', hfill=RED,
+      par='Laju konversi 0,0639 dari Tahap 2', did='Dicoba pada 13 variabel yang dinilai',
+      big='32,4%', bcolr=RED, blab='lahan terbangun (uji penuh) jadi kurang cocok', sub='batas toleransi 5% · 12 variabel lain hampir tetap',
+      why='Uji penuh mulai 2019 saat lahan sudah tinggi, sehingga laju yang lebih cepat membuat simulasi melampaui data.',
+      badge='Ditolak\n(kembali ke 0,0436)', bfill=RED, bcol=WHITE)]
 w, g = 3.5, 0.175
-for k, (tag, title, par, items, badge, bfill, bcol) in enumerate(C):
+for k, c in enumerate(C):
     x = 0.9 + k * (w + g)
-    paras = [[(tag, 9.5, True, GREY)], [(title, 12.5, True, TEAL)], [(par, 10, True, DARK, True)]]
-    for lab, txt in items:
-        paras.append([(lab + ':  ', 10.5, True, TEAL), (txt, 10.5, False, DARK)])
-    box(s, x, 1.95, w, 6.55, fill=LIGHT, line=LINE, paras=paras, margin=0.14)
-    box(s, x + 0.12, 7.62, w - 0.24, 0.75, fill=bfill, line=None, anchor=MSO_ANCHOR.MIDDLE, align=PP_ALIGN.CENTER, margin=0.06,
-        paras=[[(badge, 10, True, bcol)]])
+    box(s, x, 1.95, w, 6.5, fill=WHITE, line=LINE, radius=0.05)
+    box(s, x, 1.95, w, 0.85, fill=c['hfill'], line=None, radius=0.12, anchor=MSO_ANCHOR.MIDDLE, margin=0.15,
+        paras=[[(c['tag'], 9.5, True, YEL if c['hfill'] != YEL else DARK)], [(c['title'], 12.5, True, WHITE)]])
+    tb(s, x + 0.15, 2.88, w - 0.3, 0.6, [[(c['par'], 9.5, True, DARK, True)]])
+    box(s, x + 0.15, 3.5, w - 0.3, 0.42, fill=LIGHT, line=None, anchor=MSO_ANCHOR.MIDDLE, margin=0.08,
+        paras=[[('Dicoba: ', 9, True, TEAL), (c['did'], 9, False, DARK)]])
+    if c['big']:
+        tb(s, x + 0.15, 4.0, w - 0.3, 0.75, [[(c['big'], 28, True, c['bcolr'])]], align=PP_ALIGN.CENTER)
+        tb(s, x + 0.15, 4.78, w - 0.3, 0.75, [[(c['blab'], 10, True, DARK)], [(c['sub'], 9.5, False, GREY)]], align=PP_ALIGN.CENTER)
+    else:
+        for j, (lab, val) in enumerate(c['rows']):
+            box(s, x + 0.15, 4.05 + j * 0.55, w - 0.3, 0.47, fill=LIGHT, line=None, anchor=MSO_ANCHOR.MIDDLE, align=PP_ALIGN.CENTER, margin=0.05,
+                paras=[[(lab + '  ', 10.5, True, TEAL), (val, 11.5, True, DARK)]])
+        tb(s, x + 0.15, 5.18, w - 0.3, 0.35, [[(c['blab'], 9.5, False, GREY)]], align=PP_ALIGN.CENTER)
+    ln = s.shapes.add_connector(1, Inches(x + 0.3), Inches(5.6), Inches(x + w - 0.3), Inches(5.6))
+    ln.line.color.rgb = rgb(LINE); ln.line.width = Pt(1)
+    tb(s, x + 0.15, 5.68, w - 0.3, 1.75, [[('Kenapa? ', 10.5, True, TEAL), (c['why'], 10.5, False, DARK)]])
+    box(s, x + 0.12, 7.52, w - 0.24, 0.8, fill=c['bfill'], line=None, anchor=MSO_ANCHOR.MIDDLE, align=PP_ALIGN.CENTER, margin=0.06,
+        paras=[[(ln_, 10.5 if i == 0 else 9.5, i == 0, c['bcol'])] for i, ln_ in enumerate(c['badge'].split('\n'))])
     if k < 4:
-        arrow(s, x + w - 0.02, 4.9, g + 0.04, 0.3)
+        arrow(s, x + w - 0.02, 2.22, g + 0.04, 0.3)
 box(s, 0.9, 8.65, 18.2, 1.3, fill=TEAL, line=None, anchor=MSO_ANCHOR.MIDDLE, margin=0.25, paras=[
     [('Hasil akhir: dari 3 parameter yang dikalibrasi (batas TPK, laju demolisi, laju konversi), tidak ada yang diganti', 13.5, True, YEL)],
     [('Nilai yang dihitung dari data sudah layak dipakai. Selisih pada jumlah wisatawan bukan karena nilai parameter yang salah, tetapi karena lonjakan wisatawan setelah pandemi yang berada di luar cakupan model.', 11, False, WHITE)]])
