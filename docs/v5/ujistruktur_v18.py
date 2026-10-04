@@ -109,28 +109,29 @@ s.notes_slide.notes_text_frame.text = (
 # ============================================================ 2/3
 s = S[1]
 prep(s, 'Uji Struktur (2/3): Kekekalan Materi dan Feedback Loop',
-     'Tidak ada stok yang “bocor”, dan setiap loop dalam CLD bekerja sesuai rancangannya')
+     'Jumlah pada setiap stok selalu cocok dengan hitungan tambah-kurangnya, dan setiap loop berpengaruh sesuai rancangan CLD')
 head(s, 0.9, 1.95, 7.6, 'Uji kekekalan materi')
-qa(s, 0.9, 2.5, 7.6, 1.15, [('Pertanyaan', 'Adakah wisatawan, hotel, ODTW, tenaga kerja, atau lahan yang muncul/hilang di luar aliran?')])
-box(s, 0.9, 3.8, 7.6, 1.45, fill=WHITE, line=LINE, paras=[
-    [('Stok tahun depan = stok tahun ini + aliran masuk − aliran keluar', 12, True, TEAL)],
-    [('Contoh hotel 2025→2026:  ', 11, True, DARK), ('2.291 + 158,17937 − 114,55 = 2.334,62937 unit', 11, False, DARK)],
-    [('= nilai stok 2026 hasil simulasi ✓', 11, True, '1E7A43')]])
-rows = [['Stok', 'Selisih maks. 2025–2049', 'Status'],
-        ['Jumlah Wisatawan', '≈ 0', 'Kekal'], ['Jumlah Hotel dan Akomodasi', '0', 'Kekal'],
-        ['Jumlah ODTW', '0', 'Kekal'], ['Tenaga Kerja Pariwisata', '0', 'Kekal'], ['Lahan Terbangun', '0', 'Kekal']]
-gf = table(s, 0.9, 5.4, 7.6, [3.4, 2.5, 1.3], rows, size=10.5, rowh=0.53, hl={(r, 2): GREEN for r in range(1, 6)})
+qa(s, 0.9, 2.5, 7.6, 1.2, [('Pertanyaan', 'Apakah jumlah pada setiap stok hanya berubah karena yang bertambah dan yang berkurang, tanpa ada selisih yang tidak jelas asalnya?')], size=11.5)
+box(s, 0.9, 3.85, 7.6, 1.5, fill=WHITE, line=LINE, paras=[
+    [('Jumlah tahun depan = jumlah tahun ini + yang bertambah − yang berkurang', 11.5, True, TEAL)],
+    [('Contoh hotel 2025→2026:  ', 11, True, DARK), ('2.291 + 158,18 (dibangun) − 114,55 (ditutup) = 2.334,63 unit', 11, False, DARK)],
+    [('= jumlah hotel 2026 pada hasil simulasi ✓', 11, True, '1E7A43')]])
+rows = [['Stok', 'Selisih terbesar 2025–2049', 'Hasil'],
+        ['Jumlah Wisatawan', '≈ 0', 'Sesuai'], ['Jumlah Hotel dan Akomodasi', '0', 'Sesuai'],
+        ['Jumlah ODTW', '0', 'Sesuai'], ['Tenaga Kerja Pariwisata', '0', 'Sesuai'], ['Lahan Terbangun', '0', 'Sesuai']]
+gf = table(s, 0.9, 5.5, 7.6, [3.3, 2.7, 1.2], rows, size=10.5, rowh=0.5, hl={(r, 2): GREEN for r in range(1, 6)})
 for r in range(6):
     for c in (1, 2):
         gf.table.cell(r, c).text_frame.paragraphs[0].alignment = PP_ALIGN.CENTER
+tb(s, 0.9, 8.53, 7.6, 0.3, [[('Selisih = hasil simulasi dikurangi hitungan tambah-kurang di atas', 9.5, False, GREY, True)]])
 
-head(s, 8.8, 1.95, 10.3, 'Uji feedback loop', 'satu loop dimatikan, dibandingkan dengan simulasi dasar')
-tb(s, 8.8, 2.5, 10.3, 0.4, [[('Jumlah wisatawan tahun 2050 (juta)', 11.5, True, DARK), ('  · loop dimatikan = variabel penutup loop ditahan pada nilai 2025', 10.5, False, GREY)]])
-cats = ['Semua rem dimatikan (R1 murni)', 'Goal-seeking tenaga kerja dimatikan', 'Okupansi akomodasi dimatikan',
-        'R2 ekonomi–objek wisata dimatikan', 'Daya dukung lahan dimatikan', 'B1 kepadatan dimatikan', 'Simulasi dasar (semua loop aktif)']
+head(s, 8.8, 1.95, 10.3, 'Uji feedback loop', 'satu loop dinonaktifkan, lalu hasilnya dibandingkan dengan simulasi dasar')
+tb(s, 8.8, 2.5, 10.3, 0.4, [[('Jumlah wisatawan tahun 2050 (juta)', 11.5, True, DARK), ('  · dinonaktifkan = variabel penghubung loop ditahan tetap pada nilai 2025', 10.5, False, GREY)]])
+cats = ['Semua balancing loop nonaktif (tinggal R1)', 'Penyesuaian tenaga kerja nonaktif', 'Okupansi akomodasi nonaktif',
+        'R2 ekonomi–objek wisata nonaktif', 'Daya dukung lahan nonaktif', 'B1 kepadatan nonaktif', 'Simulasi dasar (semua loop aktif)']
 vals = [217.37, 96.20, 96.23, 80.24, 111.66, 250.32, 96.20]
 cd = CategoryChartData(); cd.categories = cats; cd.add_series('Wisatawan 2050 (juta)', vals)
-ch = s.shapes.add_chart(XL_CHART_TYPE.BAR_CLUSTERED, Inches(8.8), Inches(2.85), Inches(10.3), Inches(3.7), cd).chart
+ch = s.shapes.add_chart(XL_CHART_TYPE.BAR_CLUSTERED, Inches(8.8), Inches(2.85), Inches(10.3), Inches(3.45), cd).chart
 ch.has_title = False; ch.has_legend = False
 ch.font.size = Pt(11); ch.font.name = F; ch.font.color.rgb = rgb(DARK)
 pl = ch.plots[0]; pl.gap_width = 40; pl.has_data_labels = True
@@ -142,30 +143,31 @@ ch.value_axis.minimum_scale = 0; ch.value_axis.maximum_scale = 300
 ch.value_axis.has_major_gridlines = True; ch.value_axis.major_gridlines.format.line.color.rgb = rgb('E3EEF1')
 ch.value_axis.format.line.fill.background(); ch.value_axis.tick_labels.font.size = Pt(10)
 ch.category_axis.tick_labels.font.size = Pt(11); ch.category_axis.format.line.color.rgb = rgb('B8C7CC')
-box(s, 8.8, 6.65, 10.3, 2.25, fill=LIGHT, line=LINE, paras=[
-    [('•  B1 kepadatan = rem terkuat: ', 11, True, DARK), ('dimatikan → wisatawan +160,2%, 5 dari 6 variabel berubah >1%.', 11, False, DARK)],
-    [('•  Daya dukung lahan: ', 11, True, DARK), ('+16,1%, tetapi satu-satunya yang mengubah 6 dari 6 variabel. ', 11, False, DARK),
-     ('R2: ', 11, True, DARK), ('wisatawan −16,6%, ODTW −45,3%.', 11, False, DARK)],
-    [('•  Dampak terbatas: ', 11, True, DARK), ('okupansi (hanya hotel −10,0%) dan goal-seeking tenaga kerja (hanya tenaga kerja −43,9%).', 11, False, DARK)],
-    [('•  Efek loop tidak bisa dijumlahkan: ', 11, True, DARK), ('B1 saja dimatikan (250,32) > semua rem dimatikan (217,37), karena R2 tetap menaikkan daya tarik hingga 1,0696.', 11, False, DARK)]])
-intinya(s, 'Stok hanya berubah lewat alirannya, dan setiap balancing loop yang dimatikan mempercepat pertumbuhan: keenam loop CLD bekerja sesuai rancangan.')
+box(s, 8.8, 6.35, 10.3, 2.55, fill=LIGHT, line=LINE, paras=[
+    [('•  B1 kepadatan paling berpengaruh: ', 10.5, True, DARK), ('tanpa B1, wisatawan 2050 naik 160,2% dan 5 dari 6 variabel utama* berubah >1%.', 10.5, False, DARK)],
+    [('•  Daya dukung lahan: ', 10.5, True, DARK), ('wisatawan naik 16,1%, tetapi memengaruhi keenam variabel utama. ', 10.5, False, DARK),
+     ('R2: ', 10.5, True, DARK), ('wisatawan turun 16,6%, ODTW turun 45,3%.', 10.5, False, DARK)],
+    [('•  Hanya memengaruhi satu variabel: ', 10.5, True, DARK), ('okupansi akomodasi (jumlah hotel −10,0%) dan penyesuaian tenaga kerja (tenaga kerja −43,9%).', 10.5, False, DARK)],
+    [('•  Pengaruh loop tidak bisa dijumlahkan: ', 10.5, True, DARK), ('menonaktifkan B1 saja (250,32 juta) lebih tinggi daripada menonaktifkan semua balancing loop (217,37 juta), karena R2 yang masih aktif terus menaikkan daya tarik hingga 1,0696.', 10.5, False, DARK)],
+    [('* wisatawan, hotel, ODTW, tenaga kerja, lahan terbangun, daya tarik', 9.5, False, GREY, True)]])
+intinya(s, 'Hitungan setiap stok cocok tanpa selisih, dan setiap balancing loop yang dinonaktifkan membuat pertumbuhan lebih cepat: keenam loop berpengaruh sesuai rancangan CLD.')
 source(s, 'Sumber: Buku Subbab 4.4.3–4.4.4, Tabel 40–42, Gambar 17.', y=10.12)
 s.notes_slide.notes_text_frame.text = (
-    'Uji kekekalan materi memeriksa apakah setiap stok benar-benar hasil akumulasi alirannya. Contohnya hotel: 2.291 ditambah konstruksi 158,18 dikurangi demolisi 114,55 menghasilkan 2.334,63, '
-    'sama persis dengan nilai stok 2026 hasil simulasi. Pada kelima stok selisihnya nol sepanjang 2025 sampai 2049. '
-    'Uji feedback loop dilakukan dengan mematikan satu loop pada satu waktu. Rem kepadatan B1 paling kuat: tanpa B1, wisatawan 2050 naik 160 persen. '
-    'Daya dukung lahan dampaknya moderat tetapi menyentuh keenam variabel. Mematikan R2 justru menurunkan wisatawan dan paling besar menurunkan ODTW. '
-    'Okupansi dan goal-seeking tenaga kerja hanya memengaruhi satu variabel. Menariknya, mematikan B1 saja menghasilkan angka lebih tinggi daripada mematikan semua rem, '
-    'karena R2 tetap mendorong daya tarik naik. Jadi efek antarloop tidak bisa dijumlahkan begitu saja.')
+    'Uji kekekalan materi memeriksa apakah jumlah pada setiap stok hanya berubah karena yang bertambah dan yang berkurang. Contohnya hotel: 2.291 ditambah 158,18 yang dibangun '
+    'dikurangi 114,55 yang ditutup menghasilkan 2.334,63, sama persis dengan jumlah hotel 2026 hasil simulasi. Pada kelima stok selisihnya nol sepanjang 2025 sampai 2049. '
+    'Uji feedback loop dilakukan dengan menonaktifkan satu loop pada satu waktu, yaitu menahan variabel penghubung loop tetap pada nilai 2025. Loop kepadatan B1 paling berpengaruh: '
+    'tanpa B1, wisatawan 2050 naik 160 persen. Daya dukung lahan pengaruhnya sedang tetapi menyentuh keenam variabel utama. Menonaktifkan R2 justru menurunkan wisatawan dan paling besar menurunkan ODTW. '
+    'Okupansi akomodasi dan penyesuaian tenaga kerja hanya memengaruhi satu variabel. Menariknya, menonaktifkan B1 saja menghasilkan angka lebih tinggi daripada menonaktifkan semua balancing loop, '
+    'karena R2 tetap menaikkan daya tarik. Jadi pengaruh antarloop tidak bisa dijumlahkan begitu saja.')
 
 # ============================================================ 3/3
 s = S[2]
 prep(s, 'Uji Struktur (3/3): Kondisi Ekstrem dan Error Integrasi',
-     'Pada nilai ekstrem model tetap logis; pelanggaran kecil pada E15 hanya error hitungan numerik')
-head(s, 0.9, 1.95, 11.3, 'Uji kondisi ekstrem', '17 uji pada 5 subsistem, dinilai dengan 6 aturan fisik')
-rules = ['Stok ≥ 0', 'TPK ≤ 1', 'RDDL ≥ 0', 'Lahan ≤ luas wilayah', 'Daya tarik 0–3', 'Wisatawan ≤ 5× dasar*']
+     'Saat parameter diberi nilai ekstrem, hasil model tetap masuk akal; selisih kecil pada E15 berasal dari langkah hitung, bukan struktur')
+head(s, 0.9, 1.95, 11.3, 'Uji kondisi ekstrem', '17 uji: parameter diberi nilai ekstrem (mis. dinolkan, dikali 10), lalu dicek dengan 6 syarat logis')
+rules = ['Stok tidak negatif', 'TPK maks. 1 (100%)', 'RDDL tidak negatif', 'Lahan ≤ luas wilayah', 'Daya tarik 0–3', 'Wisatawan ≤ 5× dasar*']
 for k, r in enumerate(rules):
-    chip(s, 0.9 + k * 1.9, 2.55, 1.8, 0.5, r, size=10.5, bold=True, color=TEAL)
+    chip(s, 0.9 + k * 1.9, 2.55, 1.8, 0.5, r, size=10, bold=True, color=TEAL)
 for k, (big, lab, fill, line, col) in enumerate([('15', 'lolos', GREEN, '9BD8AF', '1E7A43'),
                                                  ('2', 'lolos dengan catatan (E02, E15)', YEL_L, YEL, '7A5A00'),
                                                  ('0', 'gagal', LIGHT, LINE, TEAL)]):
@@ -173,36 +175,37 @@ for k, (big, lab, fill, line, col) in enumerate([('15', 'lolos', GREEN, '9BD8AF'
     box(s, x, 3.2, w, 0.8, fill=fill, line=line, anchor=MSO_ANCHOR.MIDDLE, align=PP_ALIGN.CENTER, margin=0.08,
         paras=[[(big + ' ', 22, True, col), (lab, 12, True, col)]])
 box(s, 0.9, 4.1, 11.3, 0.62, fill=WHITE, line=LINE, anchor=MSO_ANCHOR.MIDDLE, paras=[[
-    ('4 pembatas ditambahkan setelah uji awal: ', 11, True, TEAL),
-    ('TPK ≤ 1 · RDDL ≥ 0 · batas atas komponen kepadatan dan ODTW pada indeks daya tarik', 11, False, DARK)]])
-for k, (img, cap) in enumerate([('image21.png', [('E04 · ', 10.5, True, TEAL), ('rasio investasi/PDRB = 0 → TPK naik lalu mendatar tepat di 1,000 (rasio permintaan sampai 2,267)', 10.5, False, DARK)]),
-                                ('image22.png', [('E09 · ', 10.5, True, TEAL), ('laju konversi ×10 → RDDL turun tepat ke 0; lahan berhenti di luas wilayah', 10.5, False, DARK)])]):
+    ('Uji awal menemukan 4 persamaan yang bisa tidak masuk akal, lalu diberi batas: ', 10.5, True, TEAL),
+    ('TPK maks. 1, RDDL min. 0, dan nilai maksimum untuk komponen kepadatan dan ODTW pada daya tarik.', 10.5, False, DARK)]])
+for k, (img, cap) in enumerate([('image21.png', [('E04 · ', 10.5, True, TEAL), ('investasi dinolkan → TPK naik lalu berhenti tepat di 1, padahal permintaan kamar mencapai 2,267× kapasitas', 10.5, False, DARK)]),
+                                ('image22.png', [('E09 · ', 10.5, True, TEAL), ('konversi lahan non-pariwisata ×10 → RDDL turun tepat ke 0; lahan terbangun berhenti di luas wilayah', 10.5, False, DARK)])]):
     x = 0.9 + k * 5.75
     pc = pic(s, MED + img, x, 4.85, w=5.55); pc.line.color.rgb = rgb(LINE); pc.line.width = Pt(1)
     ph = pc.height / E
     tb(s, x, 4.85 + ph + 0.05, 5.55, 0.75, [cap])
-tb(s, 0.9, 7.55, 11.3, 1.3, [[('Bukti lain: ', 11.5, True, TEAL), ('daya tarik tetap 0,60–1,00 pada E01 & E15; E10 = E11 identik; E12/E13 hanya mengubah tenaga kerja. ', 11.5, False, DARK),
-                             ('* E02 & E15 dikecualikan dari aturan 5×: ', 11.5, True, '7A5A00'), ('rem sengaja dihilangkan/pendorong diperbesar. Batas berlaku model: LPE ≲ 0,336 (≈1,25× nilai dasar).', 11.5, False, DARK)]])
+tb(s, 0.9, 7.6, 11.3, 1.35, [[('Bukti lain: ', 10.5, True, TEAL), ('daya tarik tetap 0,60–1,00 pada E01 & E15 (tidak melonjak); E10 dan E11 hasilnya sama persis sesuai dugaan; E12/E13 hanya mengubah tenaga kerja.', 10.5, False, DARK)],
+                             [('* E02 & E15 tidak dinilai dengan syarat 5×: ', 10.5, True, '7A5A00'), ('keduanya sengaja menghapus pengurang wisatawan atau melipatgandakan pertumbuhan. Model berlaku selama laju pertumbuhan eksternal (LPE) tidak melebihi sekitar 0,336 (≈1,25× nilai dasar).', 10.5, False, DARK)]])
 
-head(s, 12.5, 1.95, 6.6, 'Uji error integrasi', 'lanjutan E15')
-tb(s, 12.5, 2.5, 6.6, 0.6, [[('Pada E15 (LPE ×3), dt 1 tahun, lahan sempat melewati luas wilayah. Salah struktur atau error hitungan?', 10.5, False, DARK)]])
-pc = pic(s, MED + 'image27.png', 13.0, 3.1, w=5.6); pc.line.color.rgb = rgb(LINE); pc.line.width = Pt(1)
-y0 = 3.1 + pc.height / E + 0.08
-rows = [['Langkah waktu (dt)', 'Lahan vs luas wilayah'],
-        ['1 tahun', 'lewat 57,70 ha (0,018%)'], ['0,5 tahun', 'lewat 0,01 ha'],
-        ['0,25 tahun', 'berhenti 317.035,82 ha ✓'], ['0,125 tahun', 'beda 0,06 ha dari dt 0,25']]
-gf = table(s, 12.5, y0, 6.6, [2.3, 4.3], rows, size=10, rowh=0.34,
+head(s, 12.5, 1.95, 6.6, 'Uji error integrasi', 'ketelitian langkah hitung')
+tb(s, 12.5, 2.5, 6.6, 0.6, [[('Model menghitung per langkah waktu 1 tahun. Pada E15 (LPE ×3), lahan sempat melewati luas wilayah. Salah struktur, atau langkahnya terlalu kasar?', 10, False, DARK)]])
+pc = pic(s, MED + 'image27.png', 13.0, 3.15, w=5.6); pc.line.color.rgb = rgb(LINE); pc.line.width = Pt(1)
+y0 = 3.15 + pc.height / E + 0.08
+rows = [['Langkah hitung', 'Lahan terbangun vs luas wilayah'],
+        ['1 tahun', 'melewati 57,70 ha (0,018%)'], ['0,5 tahun', 'melewati 0,01 ha'],
+        ['0,25 tahun', 'berhenti di 317.035,82 ha ✓'], ['0,125 tahun', 'hanya beda 0,06 ha dari 0,25']]
+gf = table(s, 12.5, y0, 6.6, [2.0, 4.6], rows, size=10, rowh=0.34,
            hl={(1, 1): PINK, (2, 1): YEL_L, (3, 1): GREEN, (4, 1): GREEN})
-tb(s, 12.5, y0 + 5 * 0.34 + 0.06, 6.6, 0.9, [[('Selisih mengecil seiring dt diperkecil → error numerik (metode Euler), bukan struktur. Simulasi dasar dt 1 vs 0,5: −0,27% s.d. +0,34% → dt 1 tahun memadai.', 10, False, DARK)]])
-intinya(s, 'Keempat pembatas bekerja di seluruh 17 uji ekstrem, dan model valid secara struktural sehingga dapat dilanjutkan ke uji perilaku.')
+tb(s, 12.5, y0 + 5 * 0.34 + 0.06, 6.6, 0.95, [[('Selisih hilang saat langkah diperkecil → penyebabnya cara menghitung per langkah, bukan struktur. Simulasi dasar dengan langkah 1 vs 0,5 tahun hanya beda −0,27% s.d. +0,34%, jadi langkah 1 tahun sudah cukup.', 9.5, False, DARK)]])
+intinya(s, 'Keempat batas bekerja di seluruh 17 uji, dan selisih pada E15 hilang saat langkah hitung diperkecil: model valid secara struktural dan dapat lanjut ke uji perilaku.')
 source(s, 'Sumber: Buku Subbab 4.4.5–4.4.6, Tabel 43–44, Gambar 18, 19, dan 24.', y=10.12)
 s.notes_slide.notes_text_frame.text = (
-    'Uji kondisi ekstrem menguji 17 kombinasi nilai ekstrem pada lima subsistem dengan enam aturan fisik, misalnya TPK tidak boleh lebih dari satu dan lahan tidak boleh melebihi luas wilayah. '
-    'Uji awal menemukan empat titik struktur yang bisa melanggar aturan, lalu diperbaiki dengan menambahkan pembatas. Setelah perbaikan, 15 uji lolos, 2 lolos dengan catatan, dan tidak ada yang gagal. '
-    'Buktinya, pada E04 TPK mendatar tepat di satu meskipun rasio permintaan mencapai 2,27, dan pada E09 rasio daya dukung lahan turun tepat ke nol. '
-    'E02 dan E15 diberi catatan karena sengaja mendorong model jauh di luar batas berlakunya, yaitu laju pertumbuhan eksternal sekitar 0,336. '
-    'Pada E15, lahan sempat melewati luas wilayah 57,70 hektar dengan langkah waktu satu tahun. Ketika langkah waktu diperkecil, pelanggarannya menyusut lalu hilang pada 0,25 tahun. '
-    'Artinya ini error hitungan numerik, bukan kesalahan struktur. Dengan demikian model valid secara struktural dan dapat dilanjutkan ke uji perilaku.')
+    'Uji kondisi ekstrem memberi nilai ekstrem pada parameter, misalnya dinolkan atau dikali sepuluh, lalu memeriksa apakah hasilnya tetap masuk akal dengan enam syarat, '
+    'misalnya TPK tidak boleh lebih dari 100 persen dan lahan terbangun tidak boleh melebihi luas wilayah. Uji awal menemukan empat persamaan yang bisa menghasilkan nilai tidak masuk akal, '
+    'lalu saya beri batas. Setelah itu, 15 uji lolos, 2 lolos dengan catatan, dan tidak ada yang gagal. Contohnya, saat investasi dinolkan, TPK berhenti tepat di 100 persen meskipun permintaan kamar 2,27 kali kapasitas, '
+    'dan saat konversi lahan dikali sepuluh, rasio daya dukung lahan turun tepat ke nol. E02 dan E15 diberi catatan karena sengaja mendorong model jauh di luar batas berlakunya. '
+    'Uji error integrasi memeriksa ketelitian langkah hitung. Model menghitung tahun demi tahun; pada E15 lahan sempat melewati luas wilayah 57,70 hektar. Ketika langkah hitung diperkecil, '
+    'selisih itu mengecil lalu hilang pada 0,25 tahun. Artinya penyebabnya cara menghitung, bukan struktur model. Dengan demikian model valid secara struktural dan dapat lanjut ke uji perilaku.')
+
 
 p.save('/tmp/pptwork/v5/ujistruktur_3slide.pptx')
 print('ok')
