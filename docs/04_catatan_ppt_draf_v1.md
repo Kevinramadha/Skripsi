@@ -1,5 +1,15 @@
 # Catatan PPT sidang berbasis tujuan
 
+## Revisi dosen (dari "Lengkap_PPT_SIDANG_FINAL.pptx" versi Kevin, 90 → 94 slide)
+
+- Bahasa: 230 kalimat/sel ditulis ulang agar tidak kaku. Istilah diganti: tuas → variabel kebijakan; galat → error; derau → noise; umpan balik → feedback; penguat/penyeimbang → reinforcing/balancing loop; guncangan → shock; ambang → batas; endogen/eksogen → "dihitung di dalam model"/"input dari luar model"; kekokohan → robustness; triangulasi, punggung, substantif, rezim, lebar rentang, dll. diganti kalimat biasa. Daftar lengkap: `docs/v5/rewrite.py`.
+- Judul vs resume: baris atas = judul tahapan (32 pt, tebal, tanpa nomor subbab); baris bawah = resume isi slide (19 pt, abu-abu). Daftar: `docs/v5/titles.py`.
+- Slide baru 31: Estimasi Lahan Terbangun — Validasi Spasial (Gambar 14–15 buku).
+- Lampiran 17 (2 slide): daftar istilah — kode uji (P1–P5, P1b, E01–E17, Tahap 0–4, aturan R1–R4, M1/M2/S/T, D-A/D-B/D-C, C0–C6) dan ukuran/singkatan.
+- Lampiran 18: kategori IRTS 2008 dan pemetaan ke KBLI 2020. Daftar 12 kategori IRTS dan kode KBLI-nya berasal dari IRTS 2008/KBLI 2020, bukan dari buku; mohon dicek.
+- Koreksi isi: Lampiran 13 sebelumnya menyebut "P1b, versi COVID"; menurut buku P1b = variasi P1 dengan rata-rata kamar per unit aktual.
+- Catatan pembicara belum disesuaikan dengan istilah baru.
+
 ## Draf v4 – 16 menit (turunan dari v3; v3 tetap disimpan sebagai versi lengkap)
 
 - Slide utama: 25 (1–25), target ±16 menit. Urutan = slide v3 nomor 1, 6, 8, 9, 14, 17, 19, 21, 24, 25, 32, 34, 41, 50, 52, 56, 57, 59, 61, 64, 66, 69, 73, 74, 75.
