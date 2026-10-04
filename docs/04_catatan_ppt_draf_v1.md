@@ -9,6 +9,7 @@
 - Lampiran 18: kategori IRTS 2008 dan pemetaan ke KBLI 2020. Daftar 12 kategori IRTS dan kode KBLI-nya berasal dari IRTS 2008/KBLI 2020, bukan dari buku; mohon dicek.
 - Koreksi isi: Lampiran 13 sebelumnya menyebut "P1b, versi COVID"; menurut buku P1b = variasi P1 dengan rata-rata kamar per unit aktual.
 - Catatan pembicara belum disesuaikan dengan istilah baru.
+- Grafik yang bisa diedit (klik kanan → Edit Data) menggantikan gambar pada slide 3 (CAGR), 4 (kontribusi PDB, kunjungan wisman/wisnus), 42 (uji feedback loop), 45 (data wisnus mentah vs tersambung), 47 (DC uji parsial vs penuh), 54 (pengaruh maksimum ±10%), 69 (SUS). Data: buku (Tabel 45, 56, Lampiran 11/8), repo Evaluasi SUS, dan angka pada grafik lama (CAGR, PDB, kunjungan). Kode: `docs/v5/charts_v6.py`.
 
 ## Draf v4 – 16 menit (turunan dari v3; v3 tetap disimpan sebagai versi lengkap)
 
