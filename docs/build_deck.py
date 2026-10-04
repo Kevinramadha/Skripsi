@@ -238,20 +238,20 @@ def section_of(i):
         return 1
     if 17 <= i <= 23:
         return 2
-    if 24 <= i <= 62:
+    if 24 <= i <= 63:
         return 3
-    if 63 <= i <= 69:
+    if 64 <= i <= 70:
         return 4
-    if 70 <= i <= 73:
+    if 71 <= i <= 74:
         return 5
     return None
 
 
 SUB = {}
-for a, b, lab in [(25, 32, '2A · Integrasi citra satelit'), (33, 35, '2B · Formulasi model'),
-                  (36, 38, '2C · Parameterisasi'), (39, 42, '2D · Uji struktur'),
-                  (43, 51, '2E · Uji perilaku & kalibrasi'), (52, 53, '2F · Analisis sensitivitas'),
-                  (54, 61, '2G · Skenario kebijakan')]:
+for a, b, lab in [(25, 32, '2A · Integrasi citra satelit'), (33, 36, '2B · Formulasi model'),
+                  (37, 39, '2C · Parameterisasi'), (40, 43, '2D · Uji struktur'),
+                  (44, 52, '2E · Uji perilaku & kalibrasi'), (53, 54, '2F · Analisis sensitivitas'),
+                  (55, 62, '2G · Skenario kebijakan')]:
     for k in range(a, b + 1):
         SUB[k] = lab
 
@@ -299,7 +299,10 @@ for i, s in enumerate(S, 1):
 
 
 def SL(i):
-    return S[i - 1]
+    # indeks lama (draf v1) -> posisi baru; SFD utama disisipkan di posisi 34, lampiran SFD (lama 83) dihapus
+    assert i != 83
+    j = i if i <= 33 else (i + 1 if i <= 82 else i)
+    return S[j - 1]
 
 
 # ------------------------------------------------------------------ revisions of existing slides
@@ -367,7 +370,7 @@ for sh in s.shapes:
 replace_in_slide(SL(75), 'Latar Belakang', 'Lampiran 1')
 
 # lampiran renumbering
-LAMP = {76: 2, 77: 3, 78: 4, 80: 6, 82: 8, 83: 9, 84: 10, 85: 11, 86: 12, 88: 14, 89: 15, 90: 16, 91: 17}
+LAMP = {76: 2, 77: 3, 78: 4, 80: 6, 82: 8, 84: 9, 85: 10, 86: 11, 88: 13, 89: 14, 90: 15, 91: 16}
 for i, n in LAMP.items():
     t = title_shape(SL(i))
     txt = t.text_frame.text
@@ -379,9 +382,9 @@ DIV = {
     17: ('Tujuan 1', 'Mengidentifikasi dan merumuskan variabel-variabel utama penyusun CLD dalam model sistem dinamis kebijakan pariwisata di Provinsi DIY.',
          'Metode identifikasi  →  Evaluasi kandidat  →  Hubungan kausal  →  CLD  →  Batas model', 'Ringkasan hasil: slide 23'),
     24: ('Tujuan 2', 'Mengembangkan model sistem dinamis yang komprehensif dan memanfaatkan data citra satelit untuk memutakhirkan variabel yang mengalami jeda data, serta menguji validitas strukturnya dan kesesuaiannya terhadap data historis sebagai dasar simulasi kebijakan pariwisata.',
-         '2A Citra satelit  →  2B Formulasi  →  2C Parameter  →  2D Uji struktur  →  2E Uji perilaku & kalibrasi  →  2F Sensitivitas  →  2G Skenario', 'Ringkasan hasil: slide 62'),
+         '2A Citra satelit  →  2B Formulasi  →  2C Parameter  →  2D Uji struktur  →  2E Uji perilaku & kalibrasi  →  2F Sensitivitas  →  2G Skenario', 'Ringkasan hasil: slide 63'),
     63: ('Tujuan 3', 'Membangun aplikasi berbasis web yang mengimplementasikan hasil pemodelan dan simulasi skenario kebijakan sebagai alat bantu analisis dan pengambilan keputusan.',
-         'Alasan & kebutuhan  →  Arsitektur  →  Fitur  →  Uji fungsional  →  Usability (SUS)', 'Ringkasan hasil: slide 69'),
+         'Alasan & kebutuhan  →  Arsitektur  →  Fitur  →  Uji fungsional  →  Usability (SUS)', 'Ringkasan hasil: slide 70'),
 }
 for i, (big, quote, flow, link) in DIV.items():
     s = SL(i)
@@ -499,7 +502,7 @@ for k, (h, f, c, items) in enumerate(colsd):
     box(s, x, 3.3, 5.9, 4.9, fill=LIGHT, paras=[('• ' + it, 14.5, False, DARK) for it in items])
 box(s, 0.9, 8.35, 18.2, 0.75, fill=WHITE, paras=[[('Konsekuensi utama:  ', 14, True, RED), ('mekanisme penyeimbang lewat harga tidak tercakup; promosi & aksesibilitas tersirat di LPE; lintasan tanpa guncangan; daya dukung lahan cenderung longgar (luas administratif).', 14, False, DARK)]], anchor=MSO_ANCHOR.MIDDLE)
 takeaway(s, 'Hasil model tidak boleh ditafsirkan pada ranah harga, promosi, musim, maupun guncangan eksternal.', y=9.22, h=0.8)
-source(s, 'Sumber: Buku Subbab 3.7.4 (uji kecukupan batas), 4.1.2, Tabel 13–15; rincian di Lampiran 10.', y=10.08)
+source(s, 'Sumber: Buku Subbab 3.7.4 (uji kecukupan batas), 4.1.2, Tabel 13–15; rincian di Lampiran 9.', y=10.08)
 
 # 23 ringkasan T1
 def ringkasan(s, title, q, items, nxt):
@@ -774,7 +777,7 @@ rows = [['Indikator 2050', 'BAU', 'Sustainable', 'Development Priority', 'Sumber
 table(s, 0.9, 2.5, 18.2, [6.0, 2.4, 2.6, 3.4, 3.0], rows, size=14, rowh=0.62)
 tb(s, 0.9, 7.2, 18.2, 1.0, [('TPK tercantum sebagai KPI deskriptif pada Tabel 21 buku tetapi tidak muncul di Tabel 60; nilainya diambil dari hasil_simulasi_skenario.xlsx (23 run: 3 skenario × 7 kondisi + 2 dekomposisi).', 13, False, GREY, True)])
 
-s = lamp(87, 13, 'Horizon diperpanjang sampai 2150 (uji kestabilan, BAU)')
+s = lamp(87, 12, 'Horizon diperpanjang sampai 2150 (uji kestabilan, BAU)')
 rows = [['Tahun', 'Wisatawan (juta)', 'Daya tarik', 'RDDL', 'Lahan (ha)', 'Hotel (unit)', 'ODTW', 'TK (ribu)'],
         ['2050', '96,20', '0,813', '0,615', '122.208', '5.404', '367', '650,4'],
         ['2075', '122,23', '0,758', '0,346', '207.210', '7.191', '534', '637,1'],
@@ -821,3 +824,60 @@ for i, t in NOTES.items():
     ns.notes_text_frame.text = t
 p.save('/tmp/pptwork/stage2.pptx')
 print('notes done')
+
+# ------------------------------------------------------------------ revisi v2
+# slide 21: CLD + tabel loop
+s = SL(21); strip(s)
+set_title(s, 'Hasil: CLD final dengan dua loop penguat dan empat loop penyeimbang')
+pic_fit(s, MED + 'image11.png', 0.9, 2.45, 7.6, 6.55)
+rows = [['Loop', 'Jenis', 'Rantai kausal ringkas', 'Peran dalam model'],
+        ['R1', 'Penguat', 'Wisatawan (+) → Laju Kedatangan (+) → Wisatawan', 'Pertumbuhan kunjungan bersifat akumulatif'],
+        ['R2', 'Penguat', 'Wisatawan → Pengeluaran → PDRB → Investasi → Pembangunan ODTW → ODTW → Daya Tarik → Kedatangan', 'Jalur ekonomi–atraksi; tempat tuas Insentif Kebijakan bekerja'],
+        ['B1', 'Penyeimbang', 'Wisatawan (+) → Kepadatan (−) → Daya Tarik → Kedatangan', 'Rem kepadatan (crowding)'],
+        ['B2', 'Penyeimbang', 'Konstruksi hotel & ODTW (+) → Konversi lahan → Lahan Terbangun (−) → RDDL (+) → Daya Tarik', 'Rem daya dukung lahan; tempat tuas Konservasi Lahan bekerja'],
+        ['B3', 'Penyeimbang', 'Hotel (−) → Rasio Permintaan thd Kapasitas Kamar (+) → Laju Konstruksi → Hotel', 'Penyesuaian kapasitas akomodasi'],
+        ['B4', 'Penyeimbang', 'TK Pariwisata (−) → Selisih TK Dibutuhkan (+) → Laju Penyerapan → TK', 'Goal-seeking tenaga kerja; loop lokal']]
+hl = {}
+for r in range(1, 7):
+    hl[(r, 0)] = 'BDEFF3' if r <= 2 else YEL_L
+    hl[(r, 1)] = 'BDEFF3' if r <= 2 else YEL_L
+table(s, 8.8, 2.45, 10.3, [0.9, 1.7, 4.6, 3.1], rows, size=13, rowh=0.93, hl=hl, bold_first_col=True)
+takeaway(s, 'Pertumbuhan didorong R1–R2 dan ditahan B1–B2; dua tuas kebijakan menempel pada R2 (insentif) dan B2 (konservasi). Hubungan TK → pembangunan ODTW tidak dipertahankan.', y=9.15, h=0.9)
+source(s, 'Sumber: Buku Subbab 4.1.3, Tabel 26, Gambar CLD.', y=10.12)
+
+# slide 34: SFD utama
+s = S[33]; strip(s)
+set_title(s, 'Hasil: stock-flow diagram pariwisata DIY')
+pic_fit(s, MED + 'image12.png', 0.9, 2.4, 13.6, 6.65)
+box(s, 14.75, 2.4, 4.35, 3.0, fill=LIGHT, paras=[('5 stock (kotak)', 16, True, TEAL),
+    ('Jumlah Wisatawan · Hotel & Akomodasi · ODTW · Tenaga Kerja · Lahan Terbangun', 13.5, False, DARK)])
+box(s, 14.75, 5.55, 4.35, 1.75, fill=LIGHT, paras=[('10 flow · 11 auxiliary · 35 parameter', 15, True, TEAL),
+    ('26 endogen + 35 eksogen = 61 variabel', 13.5, False, DARK)])
+box(s, 14.75, 7.45, 4.35, 1.6, fill=YEL_L, line=YEL, paras=[('Dua tuas kebijakan', 15, True, TEAL),
+    ('Insentif → investasi (R2); Konservasi → konversi lahan pariwisata (B2)', 13.5, False, DARK)])
+takeaway(s, 'SFD adalah operasionalisasi CLD menjadi model kuantitatif yang disimulasikan 2025–2050 (Δt 1 tahun, Euler). Persamaan lengkap di Lampiran 15.', y=9.2, h=0.85)
+source(s, 'Sumber: Buku Subbab 4.1.4, Gambar 10; model Vensim final.', y=10.12)
+SPK = s.notes_slide
+SPK.notes_text_frame.text = 'Ini hasil utama formulasi Tujuan 2: CLD dioperasionalkan menjadi stock-flow diagram. Lima stok sebagai kotak, aliran sebagai katup, dan variabel bantu yang menghubungkannya. Tunjukkan letak dua tuas: insentif pada jalur investasi, konservasi pada konversi lahan pariwisata.'
+
+# penanda prioritas W/S
+W = {6, 8, 9, 14, 18, 19, 21, 23, 25, 28, 30, 32, 34, 35, 37, 42, 43, 46, 47, 48, 50, 52, 54, 56, 57, 59, 61, 62, 63, 66, 67, 69, 70, 73}
+for i in range(2, 75):
+    pr = 'W' if i in W else 'S'
+    sl = S[i - 1]
+    dark = i in (17, 24, 64)
+    x, y = (18.55, 10.45) if dark else (17.55, 10.55)
+    c = box(sl, x, y, 0.46, 0.46, fill=RED if pr == 'W' else CYAN, line=None,
+            paras=[(pr, 14, True, WHITE)], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, margin=0, shape=MSO_SHAPE.OVAL)
+    c.name = 'Penanda prioritas ' + pr
+
+# legenda di slide 2
+s = S[1]
+box(s, 0.9, 9.35, 0.46, 0.46, fill=RED, line=None, paras=[('W', 14, True, WHITE)], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, margin=0, shape=MSO_SHAPE.OVAL)
+tb(s, 1.5, 9.38, 6.5, 0.45, [('Wajib dijelaskan — inti argumen', 15, False, DARK)])
+box(s, 7.2, 9.35, 0.46, 0.46, fill=CYAN, line=None, paras=[('S', 14, True, WHITE)], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, margin=0, shape=MSO_SHAPE.OVAL)
+tb(s, 7.8, 9.38, 6.5, 0.45, [('Sebut singkat — cukup takeaway (15–30 detik)', 15, False, DARK)])
+tb(s, 13.6, 9.38, 5.5, 0.45, [('Penanda ada di pojok kanan bawah setiap slide', 13, False, GREY, True)])
+
+p.save('/tmp/pptwork/stage2.pptx')
+print('v2 done', len(p.slides))

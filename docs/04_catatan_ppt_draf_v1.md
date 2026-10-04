@@ -1,4 +1,12 @@
-# Catatan PPT "PPT Sidang - Berbasis Tujuan (draf v1).pptx"
+# Catatan PPT sidang berbasis tujuan
+
+## Draf v2 (perubahan dari v1)
+- **Slide 21 (CLD)** dirapikan: gambar CLD di kiri + tabel enam loop (loop, jenis, rantai kausal ringkas, peran dalam model) dari Tabel 26 buku.
+- **SFD dipindah ke bagian utama** sebagai slide 34 "Hasil: stock-flow diagram pariwisata DIY" (sub-tahap 2B). Lampiran SFD dihapus; nomor lampiran sesudahnya bergeser satu (Lampiran 9 = batas model, ..., Lampiran 15 = persamaan, Lampiran 16 = data historis).
+- **Penanda prioritas** di pojok kanan bawah setiap slide utama: bulat merah **W** = wajib dijelaskan (34 slide), bulat biru **S** = sebut singkat. Legenda ada di slide 2. Lampiran tanpa penanda.
+- Total tetap 91 slide: 75 utama + 16 lampiran. Ringkasan hasil kini di slide 23, 63, dan 70.
+
+## Draf v1
 
 Basis: PPT lama (desain, grafik, dan catatan pembicara dipertahankan). 91 slide = **74 utama + 17 lampiran**. Skrip pembangun: `docs/build_deck.py` (python-pptx).
 
