@@ -62,9 +62,9 @@ def outline(s, x, y, w, h, color=RED):
 
 from pptx.enum.chart import XL_CHART_TYPE
 s = p.slides[0]
-prep(s, 'Analisis Sensitivitas', 'Angka 2050 bisa bergeser cukup besar, tetapi urutan skenario tetap sama')
+prep(s, 'Analisis Sensitivitas', 'Parameter yang paling berpengaruh justru asumsi, bukan data')
 box(s, 0.9, 1.95, 18.2, 0.6, fill=LIGHT, line=None, anchor=MSO_ANCHOR.MIDDLE, margin=0.25, paras=[[
-    ('Cara pengujian:  ', 11.5, True, TEAL), ('① tiap parameter diubah ±10%, satu per satu (32 parameter)   ② diuji pada seluruh rentang nilainya (17 kelompok)   ③ urutan skenario dicek pada 7 kondisi', 11.5, False, DARK)]])
+    ('Cara pengujian:  ', 11.5, True, TEAL), ('① tiap parameter diubah ±10%, satu per satu (32 parameter)     ② parameter asumsi diuji pada seluruh rentang nilainya (17 kelompok)', 11.5, False, DARK)]])
 ASU, ACU, DAT, STK = 'E8A317', '8FD3DE', TEAL, '9AA5AB'
 tb(s, 0.9, 2.75, 10.3, 0.4, [[('Pengaruh terbesar terhadap jumlah wisatawan 2050 (uji ±10%, %)', 12, True, DARK)]])
 rows = [('Laju penurunan dasar', 42.07, ASU), ('Kepadatan referensi', 8.61, ACU), ('Bobot kepadatan', 7.49, ASU), ('Bobot ODTW', 7.27, ASU),
@@ -90,19 +90,20 @@ for k, (lab, col) in enumerate([('Asumsi peneliti', ASU), ('Nilai acuan (normali
     tb(s, x + 0.32, 8.14, 2.2, 0.4, [[(lab, 10, False, DARK)]])
 
 F3 = [('1', 'Yang paling berpengaruh adalah asumsi', '3 dari 4 parameter teratas berstatus asumsi. Laju penurunan dasar paling besar: 42,07%.'),
-      ('2', 'Ketidakpastian terbesar: rasio laju penurunan dan pertumbuhan', 'Saat rasionya digeser 0,60–0,90, hasil wisatawan 2050 berbeda hingga 153,57 poin (69,65 poin bila LPE dihitung ulang).'),
-      ('3', 'Urutan skenario tetap sama', 'Pada 7 kondisi (C0–C6), ketujuh indikator memberi urutan skenario yang sama persis.')]
+      ('2', 'Ketidakpastian terbesar: rasio laju penurunan dan pertumbuhan', 'Mengubah rasio ini (0,60–0,90) membuat hasil wisatawan 2050 bisa bergeser hingga 153,57 poin persen (69,65 poin persen bila laju pertumbuhan dihitung ulang).'),
+      ('3', 'Diuji lanjut pada skenario', 'Karena asumsi sangat berpengaruh, perbandingan antarskenario nanti diuji ulang dengan menggeser asumsi-asumsi ini.')]
 for k, (n, a, b) in enumerate(F3):
     y = 2.8 + k * 1.95
-    fill, line = (GREEN, '9BD8AF') if k == 2 else (LIGHT, LINE)
+    fill, line = LIGHT, LINE
     box(s, 11.6, y, 7.5, 1.8, fill=fill, line=line, anchor=MSO_ANCHOR.MIDDLE, margin=0.25, paras=[
-        [(a, 13, True, TEAL if k < 2 else '1E7A43')], [(b, 11.5, False, DARK)]])
-intinya(s, 'Angka proyeksi 2050 tidak bisa dibaca sebagai ramalan pasti, tetapi perbandingan antarskenario tetap bisa dipegang.', y=8.75, h=0.95)
-source(s, 'Sumber: Buku Subbab 4.7 (Tabel 56–57, Gambar 51) dan uji kekokohan peringkat skenario (Tabel 63). Rincian rancangan pengujian di lampiran.', y=10.12)
+        [(a, 13, True, TEAL)], [(b, 11.5, False, DARK)]])
+intinya(s, 'Angka 2050 sangat bergantung pada asumsi, jadi tidak dibaca sebagai ramalan pasti.', y=8.75, h=0.95)
+source(s, 'Sumber: Buku Subbab 4.7 (Tabel 56–57, Gambar 51). Rincian rancangan pengujian di lampiran.', y=10.12)
 s.notes_slide.notes_text_frame.text = (
-    'Analisis sensitivitas saya lakukan dengan tiga cara: mengubah tiap parameter plus-minus 10 persen satu per satu, menguji parameter asumsi pada seluruh rentang nilainya, '
-    'dan mengecek apakah urutan skenario berubah pada tujuh kondisi. Hasilnya, parameter yang paling berpengaruh justru asumsi: tiga dari empat teratas, dengan laju penurunan dasar paling besar, 42 persen. '
-    'Ketidakpastian terbesar ada pada rasio laju penurunan terhadap laju pertumbuhan, yang tadi juga tidak bisa ditentukan dari data saat kalibrasi. '
-    'Tapi yang terpenting, pada ketujuh kondisi itu urutan skenario tidak berubah sama sekali. Jadi angka 2050 memang bisa bergeser, tetapi perbandingan antarskenario tetap bisa dipegang.')
+    'Analisis sensitivitas saya lakukan dengan dua cara: mengubah tiap parameter plus-minus 10 persen satu per satu, dan menguji parameter asumsi pada seluruh rentang nilainya. '
+    'Hasilnya, parameter yang paling berpengaruh justru asumsi: tiga dari empat teratas, dengan laju penurunan dasar paling besar, 42 persen. '
+    'Ketidakpastian terbesar ada pada rasio laju penurunan terhadap laju pertumbuhan, yang saat kalibrasi juga tidak bisa ditentukan dari data. '
+    'Karena itu angka 2050 tidak saya baca sebagai ramalan pasti, dan perbandingan antarskenario nanti saya uji ulang dengan menggeser asumsi-asumsi ini. '
+    'Catatan bila ditanya: untuk lahan terbangun, yang paling berpengaruh adalah laju konversi lahan, dengan lebar rentang 115,70 poin persen.')
 p.save('/tmp/pptwork/v5/sensitivitas_1slide.pptx')
 print('ok')
