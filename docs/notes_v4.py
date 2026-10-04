@@ -25,3 +25,32 @@ NOTES16 = {
 74: "[0:20] Saran saya: perkuat dasar empiris parameter asumsi lewat survei primer, tambahkan guncangan eksternal, libatkan lokakarya pemangku kepentingan untuk skenario, dan tambahkan fitur pembaruan data pada aplikasi.",
 75: "[0:10] Demikian paparan saya. Terima kasih, saya siap menerima masukan dan pertanyaan. Wassalamu'alaikum warahmatullahi wabarakatuh.",
 }
+
+TRANS16 = {
+1: "Saya mulai dari konteks: mengapa DIY, dan apa masalahnya.",
+6: "Pertanyaannya, apa yang belum dijawab oleh penelitian sebelumnya?",
+8: "Dari tiga celah ini, saya merumuskan tiga tujuan penelitian.",
+9: "Untuk menjawab ketiga tujuan itu, saya menyiapkan data dan tahapan berikut.",
+14: "Saya bahas satu per satu, mulai dari Tujuan 1.",
+17: "Langkah pertamanya adalah mengidentifikasi variabel.",
+19: "Variabel dan hubungan kausal itu kemudian saya rangkai menjadi CLD berikut.",
+21: "Lalu bagaimana CLD ini dijadikan model yang dapat disimulasikan dan diuji?",
+24: "Langkah pertama adalah melengkapi data dengan citra satelit.",
+25: "Apakah estimasi dari citra ini layak dipakai? Berikut buktinya.",
+32: "Dengan data yang sudah lengkap, CLD saya operasionalkan menjadi model.",
+34: "Model ini kemudian diuji, dimulai dari strukturnya.",
+41: "Setelah strukturnya lolos, model dibandingkan dengan data historis lalu dikalibrasi.",
+50: "Dari seluruh pengujian ini, apakah model layak dipakai?",
+52: "Karena model layak, saya memakainya untuk menyimulasikan skenario kebijakan.",
+56: "Lalu bagaimana hasil ketiga skenario pada 2050?",
+57: "Pada dimensi sosial, ada satu hal yang perlu diperhatikan, yaitu kepadatan.",
+59: "Pertanyaan berikutnya, apakah hasil ini tetap bertahan bila asumsinya diubah?",
+61: "Agar model ini dapat dipakai langsung oleh pemangku kepentingan, saya lanjut ke Tujuan 3.",
+64: "Saya mulai dari arsitekturnya.",
+66: "Setelah aplikasi selesai dibangun, fungsi dan kemudahan penggunaannya saya uji.",
+69: "Setelah ketiga tujuan terjawab, berikut kesimpulan penelitian ini.",
+73: "Berangkat dari kesimpulan dan keterbatasannya, saya mengajukan beberapa saran.",
+74: "Itulah saran saya, sekaligus menutup paparan ini.",
+}
+for _k, _t in TRANS16.items():
+    NOTES16[_k] = NOTES16[_k] + "\n\n→ Transisi: " + _t
