@@ -71,10 +71,10 @@ box(s, 0.9, 1.95, 8.9, 1.25, fill=YEL_L, line=YEL, anchor=MSO_ANCHOR.MIDDLE, par
       'atau justru berasal dari luar parameter (gangguan data atau hal di luar cakupan model). Kalibrasi diposisikan sebagai alat uji (Oliva, 2003).', 11, False, DARK)]])
 head(s, 0.9, 3.35, 8.9, 'Lima ketentuan')
 K = [('Parameter dibatasi', 'Hanya parameter yang nilainya belum pasti (asumsi/estimasi). Data resmi, hasil persamaan stok-aliran, dan nilai acuan tahun dasar tidak dikalibrasi.'),
-     ('Rentang pencarian punya dasar', 'Diambil dari beberapa rujukan, atau dari selang kepercayaan 95% hasil estimasi tren.'),
-     ('Parameter berpasangan dihitung ulang', 'Setiap nilai yang dicoba, pasangannya dihitung ulang dengan persamaan stok-aliran agar tetap sesuai data historis.'),
+     ('Nilai yang dicoba punya batas yang jelas', 'Batasnya diambil dari rujukan, atau dari selang kepercayaan 95% saat parameter dihitung dari data. Contoh: laju konversi lahan dicoba 0,0034–0,0851.'),
+     ('Parameter yang saling terkait ikut disesuaikan', 'Contoh: setiap kali batas TPK diubah, sensitivitas konstruksi dihitung ulang agar model tetap sesuai data tahun dasar.'),
      ('Ukuran kecocokan: NRMSE', 'Selisih simulasi dan data, dibandingkan dengan rata-rata data; makin kecil makin cocok. MAPE sebagai pelengkap.'),
-     ('Batas "sama baiknya" 5%', 'Semua nilai yang hasilnya paling buruk 5% di atas nilai terbaik dianggap sama baiknya.')]
+     ('Selisih kecil dianggap setara (batas 5%)', 'Nilai yang NRMSE-nya paling banyak 5% di atas nilai terbaik dianggap sama baiknya. Contoh: terbaik 0,100 → nilai dengan NRMSE ≤ 0,105 setara.')]
 for k, (a, b) in enumerate(K):
     y = 3.95 + k * 0.98
     num(s, 0.95, y + 0.14, k + 1, d=0.5, size=13)
@@ -83,21 +83,20 @@ for k, (a, b) in enumerate(K):
 
 head(s, 10.15, 1.95, 8.95, 'Aturan keputusan', 'dipakai pada setiap tahap')
 rows = [['', 'Kondisi', 'Keputusan'],
-        ['R1', 'Nilai dari data termasuk kelompok "sama baiknya"', 'Perbaikannya tidak berarti → nilai dari data dipertahankan'],
-        ['R2', 'Kelompok "sama baiknya" membentang dari ujung ke ujung rentang', 'Data tidak bisa menentukan nilainya → nilai dari data dipertahankan'],
-        ['R3', 'Nilai terbaik tepat di batas rentang', 'Diperiksa ulang: tiap tahun dikeluarkan satu per satu, apakah satu tahun saja yang menariknya?'],
-        ['R4', 'Selain ketiga kondisi di atas', 'Nilai terbaik dipakai, asalkan lolos uji kompatibilitas (Tahap 4)']]
-gf = table(s, 10.15, 2.5, 8.95, [0.5, 3.6, 4.85], rows, size=10, rowh=0.72, hl={(4, 2): GREEN})
+        ['R1', 'Nilai dari data sudah termasuk yang sama baiknya (≤ 5% di atas nilai terbaik)', 'Tidak diganti, karena nilai baru tidak lebih baik secara berarti'],
+        ['R2', 'Nilai yang sama baiknya tersebar dari ujung bawah sampai ujung atas batas', 'Data tidak bisa menunjuk satu nilai → nilai dari data tetap dipakai'],
+        ['R3', 'Nilai terbaik jatuh tepat di batas yang dicoba', 'Dicek ulang dengan membuang satu tahun data secara bergantian: apakah nilai terbaik hanya muncul karena satu tahun yang janggal?'],
+        ['R4', 'Tidak termasuk ketiga kondisi di atas', 'Nilai terbaik dipakai, tetapi harus lolos uji pada model penuh (Tahap 4)']]
+gf = table(s, 10.15, 2.5, 8.95, [0.5, 3.6, 4.85], rows, size=10, rowh=0.78, hl={(4, 2): GREEN})
 for r in range(1, 5):
     c = gf.table.cell(r, 0).text_frame.paragraphs[0]; c.alignment = PP_ALIGN.CENTER; c.runs[0].font.bold = True; c.runs[0].font.color.rgb = rgb(TEAL)
-box(s, 10.15, 6.25, 8.95, 2.15, fill=WHITE, line=LINE, paras=[
-    [('Uji kompatibilitas (Tahap 4): ', 11, True, TEAL), ('hasil kalibrasi dicoba pada model penuh dan ditolak bila', 11, False, DARK)],
-    [('M1  ', 10.5, True, TEAL), ('NRMSE variabel sasaran memburuk lebih dari 5%', 10.5, False, DARK)],
-    [('M2  ', 10.5, True, TEAL), ('rata-rata NRMSE 9 variabel memburuk lebih dari 5%', 10.5, False, DARK)],
-    [('S  ', 10.5, True, TEAL), ('uji kondisi ekstrem menjadi gagal', 10.5, False, DARK)],
-    [('T  ', 10.5, True, TEAL), ('simulasi jangka panjang menjadi tidak stabil', 10.5, False, DARK)]])
-tb(s, 10.15, 8.5, 8.95, 0.4, [[('Batas 5% ditetapkan peneliti secara terbuka; kepekaannya diperiksa pada 2% dan 10%.', 9.5, False, GREY, True)]])
-intinya(s, 'Nilai dari data hanya diganti bila perbaikannya nyata, tidak bergantung pada satu tahun saja, dan tetap berlaku di model penuh.')
+box(s, 10.15, 6.6, 8.95, 1.85, fill=WHITE, line=LINE, paras=[
+    [('Uji kompatibilitas (Tahap 4): ', 11, True, TEAL), ('nilai hasil kalibrasi dicoba pada model penuh (semua subsistem aktif), dan ditolak bila salah satu terjadi:', 10.5, False, DARK)],
+    [('•  kecocokan variabel yang dikalibrasi memburuk lebih dari 5% ', 10.5, False, DARK), ('(M1)', 10.5, True, TEAL)],
+    [('•  rata-rata kecocokan 9 variabel memburuk lebih dari 5% ', 10.5, False, DARK), ('(M2)', 10.5, True, TEAL)],
+    [('•  model gagal pada uji kondisi ekstrem ', 10.5, False, DARK), ('(S)', 10.5, True, TEAL), ('  •  simulasi jangka panjang tidak stabil ', 10.5, False, DARK), ('(T)', 10.5, True, TEAL)]])
+tb(s, 10.15, 8.5, 8.95, 0.4, [[('M1, M2, S, T = kode pada Tabel 20 buku. Batas 5% juga dicek pada 2% dan 10%.', 9.5, False, GREY, True)]])
+intinya(s, 'Nilai dari data baru diganti bila nilai baru jelas lebih cocok, tidak hanya karena satu tahun data, dan tetap cocok saat semua subsistem dijalankan bersama.')
 source(s, 'Sumber: Buku Subbab 3.7.4 (Tabel 19–20). NRMSE = akar rata-rata kuadrat selisih dibagi rata-rata data.', y=10.12)
 s.notes_slide.notes_text_frame.text = (
     'Kalibrasi pada penelitian ini dipakai sebagai alat uji, mengikuti Oliva 2003. Pertanyaannya: apakah selisih yang berpola pada uji perilaku bisa dijelaskan oleh nilai parameter, '
