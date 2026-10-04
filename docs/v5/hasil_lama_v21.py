@@ -39,13 +39,13 @@ for sid in (71,):
 setp(byid(S1, 71), 0, 'Periode 2016–2025 tanpa 2020–2021. "Sama" = tren simulasi tidak berbeda nyata dengan tren data. E1/E2 P5 tidak dibaca karena trennya sudah berbeda (Barlas, 1989). *DC P5 dihitung dari notebook, tidak tercantum di tabel buku.')
 b = byid(S1, 80)
 setp(b, 0, 'Wisatawan (P5)')
-setp(b, 1, 'Simulasi tumbuh ≈6,4% per tahun, sedangkan data ≈11,7% per tahun. Selisihnya sistematis (U1+U2 ≈ 0,96), bukan acak, sehingga ditelusuri lewat kalibrasi.')
+setp(b, 1, 'Simulasi tumbuh sekitar 6,4% per tahun, sedangkan data sekitar 11,7% per tahun, sehingga simulasi makin tertinggal dari data. Selisihnya berpola, bukan kebetulan (U1+U2 ≈ 0,96), jadi penyebabnya ditelusuri lewat kalibrasi.')
 setp(byid(S1, 81), 0, 'Garis hitam = data · garis merah putus-putus = simulasi · area abu-abu = 2020–2021 (COVID). Kiri atas: P1 hotel · kanan atas: P4 lahan · kiri bawah: P5 wisatawan')
-setruns(byid(S1, 84), 0, ['Intinya  ', 'Saat input dari subsistem lain diganti data aktual, tiap subsistem dapat mengikuti pola datanya (MAPE seluruhnya < 20%); kelemahan hanya ada pada subsistem wisatawan.'])
+setruns(byid(S1, 84), 0, ['Intinya  ', 'Saat diuji sendiri-sendiri, setiap subsistem menghasilkan simulasi yang dekat dengan data (selisih rata-rata/MAPE < 20%); satu-satunya yang bermasalah adalah subsistem wisatawan, yang tumbuh lebih lambat dari data.'])
 S1.notes_slide.notes_text_frame.text = (
     'Pada uji parsial, input dari subsistem lain diganti data aktual, sehingga yang dinilai hanya struktur subsistem itu sendiri. Hasilnya, subsistem akomodasi paling baik: jumlah hotel lolos uji tren, E1, dan E2 dengan DC 0,2011. '
     'P1b sebagai uji kekokohan P1 memberi pola serupa. Seluruh MAPE di bawah 20 persen. Satu-satunya yang gagal uji tren adalah subsistem wisatawan: simulasi tumbuh sekitar 6,4 persen per tahun, '
-    'sedangkan data sekitar 11,7 persen. Selisihnya sistematis, bukan acak, sehingga penyebabnya ditelusuri lewat kalibrasi.')
+    'sedangkan data sekitar 11,7 persen, sehingga simulasi makin tertinggal. Selisihnya berpola, bukan kebetulan, sehingga penyebabnya ditelusuri lewat kalibrasi.')
 
 # ---------------- slide 2: hasil uji penuh
 setp(byid(S2, 11), 1, 'Saat semua subsistem dijalankan bersama, kecocokan pola melemah karena error dari subsistem wisatawan merambat')
@@ -54,12 +54,12 @@ setp(byid(S2, 67), 0, 'DC 0,4–0,7 = rata-rata sampai baik (Barlas, 1989). TPK 
 T = table_of(S2)
 cell(T, 0, 1, 'Variabel uji penuh (MAPE)')
 b = byid(S2, 77)
-setp(b, 0, 'Mengapa melemah? Wisatawan tumbuh lebih lambat dari data → pengeluaran, PDRB, dan investasi ikut rendah → hotel dan ODTW yang dibangun lebih sedikit. U1 dominan pada 6 dari 9 variabel: error dari satu sumber.')
+setp(b, 0, 'Mengapa melemah? Wisatawan tumbuh lebih lambat dari data → pengeluaran, PDRB, dan investasi ikut rendah → hotel dan ODTW yang dibangun lebih sedikit. Pada 6 dari 9 variabel, selisih terbesar berasal dari beda rata-rata (U1): tanda sumbernya sama.')
 S2.notes_slide.notes_text_frame.text = (
     'Pada uji penuh, model dijalankan tanpa penggantian data sehingga semua subsistem saling memengaruhi. Grafik ini membandingkan DC uji parsial dan uji penuh. '
     'DC hotel naik dari 0,20 menjadi 0,82, ODTW dari 0,34 menjadi 0,79, dan tenaga kerja dari 0,49 menjadi 0,89. Ini bukan karena struktur subsistemnya salah, '
     'tetapi karena jumlah wisatawan tumbuh lebih lambat dari data, sehingga pengeluaran, PDRB, dan investasi ikut rendah, lalu hotel dan ODTW yang dibangun lebih sedikit. TPK justru membaik. '
     'Dari sisi besaran error, MAPE tetap wajar: ODTW sangat baik, lima variabel baik, tiga variabel ekonomi layak, dan tidak ada yang buruk. '
-    'U1 dominan pada enam dari sembilan variabel, artinya error berasal dari satu sumber bersama, yaitu pertumbuhan wisatawan.')
+    'Pada enam dari sembilan variabel, selisih terbesarnya berasal dari beda rata-rata atau U1, tanda bahwa sumbernya sama, yaitu pertumbuhan wisatawan.')
 p.save('/tmp/pptwork/v5/hasil_lama_2slide.pptx')
 print('ok')

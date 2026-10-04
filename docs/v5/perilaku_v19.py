@@ -67,7 +67,7 @@ M = [['Ukuran', 'Rumus', 'Pedoman'],
      ['3 · E2\n(selisih variasi)', 'E2 = |σₛ − σₐ| / σₐ', '< 0,30 (pedoman empiris)'],
      ['4 · Discrepancy coefficient (DC)', 'DC = SD(e) / (SD(A) + SD(S))\neᵢ = Aᵢ − Sᵢ', '0,4–0,7 = rata-rata sampai baik (ringkasan, bukan uji)'],
      ['Pelengkap · MAPE', 'MAPE = (100% / n) · Σ |Sᵢ − Aᵢ| / Aᵢ', '< 10% sangat baik · 10–20% baik · 20–50% layak · > 50% buruk'],
-     ['Pelengkap · Dekomposisi error (Sterman, 1984)', 'U1 = (S̄ − Ā)² / MSE\nU2 = (σₛ − σₐ)² / MSE\nU3 = 2(1 − r)σₛσₐ / MSE', 'U1 + U2 + U3 = 1. U1/U2 dominan → error sistematis (ditelusuri lewat kalibrasi); U3 dominan → error acak']]
+     ['Pelengkap · Dekomposisi error (Sterman, 1984)', 'U1 = (S̄ − Ā)² / MSE\nU2 = (σₛ − σₐ)² / MSE\nU3 = 2(1 − r)σₛσₐ / MSE', 'U1 = beda rata-rata · U2 = beda naik-turun · U3 = beda tanpa pola. U1/U2 besar → simulasi meleset ke satu arah secara konsisten, perlu ditelusuri; U3 besar → selisih tanpa pola, wajar']]
 rh = [0.45, 1.1, 0.75, 0.75, 1.0, 0.95, 1.35]
 gs = s.shapes.add_table(len(M), 3, Inches(R), Inches(2.5), Inches(RW), Inches(sum(rh)))
 T = gs.table
@@ -96,6 +96,6 @@ s.notes_slide.notes_text_frame.text = (
     'dengan mengganti variabel dari subsistem lain menggunakan data aktual. Ada P1 sampai P5, ditambah P1b, yaitu variasi P1 yang memakai rata-rata kamar per unit aktual sebagai uji kekokohan. '
     'Uji penuh menjalankan model tanpa penggantian data pada 2019 sampai 2025 dan menilai sembilan variabel, untuk melihat apakah kesalahan merambat antarsubsistem. '
     'Penilaian dibaca berurutan mengikuti Barlas: uji tren dulu sebagai saringan, lalu E1, E2, dan terakhir discrepancy coefficient. MAPE dan dekomposisi error dipakai sebagai pelengkap, '
-    'terutama untuk melihat apakah error-nya sistematis atau acak. Untuk P5, data wisnus 2015–2018 disambung dengan faktor 2,2997 karena perubahan metode pencatatan pada 2019.')
+    'terutama untuk melihat apakah simulasi meleset ke satu arah secara konsisten, atau selisihnya naik-turun tanpa pola. Untuk P5, data wisnus 2015–2018 disambung dengan faktor 2,2997 karena perubahan metode pencatatan pada 2019.')
 p.save('/tmp/pptwork/v5/perilaku_1slide.pptx')
 print('ok')
