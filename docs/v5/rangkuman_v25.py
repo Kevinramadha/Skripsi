@@ -61,35 +61,35 @@ def outline(s, x, y, w, h, color=RED):
 
 
 s = p.slides[0]
-prep(s, 'Rangkuman Kelayakan Model', 'Model layak dipakai untuk simulasi skenario, dengan batas pemakaian yang jelas')
-CARDS = [('1', 'Uji struktur', 'LOLOS', TEAL, ['Satuan seluruh persamaan konsisten', 'Jumlah tiap stok cocok, tidak ada selisih', '6 loop bekerja sesuai rancangan', '17 uji kondisi ekstrem: 0 gagal']),
-         ('2', 'Uji perilaku', 'CUKUP BAIK', '2A9DB0', ['Diuji terpisah: semua MAPE < 20%', 'Dijalankan bersama: tidak ada MAPE buruk', 'Selisih berasal dari satu sumber: pertumbuhan wisatawan']),
-         ('3', 'Kalibrasi', 'NILAI DARI DATA DIPAKAI', TEAL, ['3 parameter dikalibrasi, 0 diganti', 'Selisih wisatawan karena lonjakan setelah pandemi, di luar cakupan model'])]
+prep(s, 'Rangkuman Kelayakan Model', 'Model sudah cukup layak untuk membandingkan skenario kebijakan')
+CARDS = [('Uji struktur', 'Lolos', TEAL, ['Persamaan dan satuannya konsisten', 'Tetap masuk akal saat diberi nilai ekstrem']),
+         ('Uji perilaku', 'Cukup baik', '2A9DB0', ['Simulasi cukup dekat dengan data', 'Selisih terbesar ada pada jumlah wisatawan']),
+         ('Kalibrasi', 'Nilai tetap', TEAL, ['Tidak ada parameter yang perlu diganti', 'Selisih wisatawan karena lonjakan setelah pandemi'])]
 w, g = 5.9, 0.25
-for k, (n, title, status, col, pts) in enumerate(CARDS):
+for k, (title, status, col, pts) in enumerate(CARDS):
     x = 0.9 + k * (w + g)
-    box(s, x, 1.95, w, 3.25, fill=LIGHT, line=LINE, radius=0.05)
-    box(s, x, 1.95, w, 1.0, fill=col, line=None, radius=0.1, anchor=MSO_ANCHOR.MIDDLE, margin=0.2,
-        paras=[[(n + '  ' + title, 12, True, 'D7EEF2')], [(status, 17, True, WHITE)]])
-    tb(s, x + 0.25, 3.12, w - 0.45, 2.0, [[('✓  ', 13.5, True, '1E7A43'), (t_, 13.5, False, DARK)] for t_ in pts])
+    box(s, x, 2.1, w, 2.55, fill=LIGHT, line=LINE, radius=0.05)
+    box(s, x, 2.1, w, 1.05, fill=col, line=None, radius=0.1, anchor=MSO_ANCHOR.MIDDLE, margin=0.25,
+        paras=[[(title, 12.5, True, 'D7EEF2')], [(status, 20, True, WHITE)]])
+    tb(s, x + 0.3, 3.4, w - 0.5, 1.5, [[('✓  ', 14, True, '1E7A43'), (t_, 14, False, DARK)] for t_ in pts])
     if k < 2:
-        arrow(s, x + w + 0.02, 3.55, g - 0.04, 0.3)
-head(s, 0.9, 5.45, 18.2, 'Batas pemakaian', 'hal yang perlu diingat saat membaca hasil model')
-B = [('Bukan alat ramal angka pasti', 'Hasil dibaca sebagai arah dan perbandingan antarskenario, bukan angka tepat untuk tahun tertentu.'),
-     ('Belum diuji dengan data baru', 'Kecocokan setelah kalibrasi dihitung dengan data yang sama, jadi bukan validasi dengan data terpisah.'),
-     ('Tanpa kejadian mendadak', 'Pandemi, bencana, dan guncangan sejenis tidak dimodelkan.'),
-     ('LPE dan LPD tidak bisa dipisahkan', 'Data hanya bisa menentukan selisih laju pertumbuhan dan penurunan wisatawan.')]
-for k, (a, b) in enumerate(B):
-    x = 0.9 + (k % 2) * 9.2; y = 6.05 + (k // 2) * 1.15
-    box(s, x, y, 9.0, 1.02, fill=YEL_L, line=YEL, anchor=MSO_ANCHOR.MIDDLE, margin=0.18,
-        paras=[[(a, 12.5, True, '9B2C1F')], [(b, 11.5, False, DARK)]])
-box(s, 0.9, 8.55, 18.2, 1.25, fill=TEAL, line=None, anchor=MSO_ANCHOR.MIDDLE, margin=0.3, paras=[
-    [('Keputusan  ', 14, True, YEL), ('Model layak dipakai untuk membandingkan arah dan besar perbedaan antarskenario kebijakan 2025–2050.', 14, True, WHITE)]])
+        arrow(s, x + w + 0.02, 3.4, g - 0.04, 0.3)
+tb(s, 0.9, 5.15, 18.2, 0.5, [[('Yang perlu diingat saat membaca hasil', 14, True, TEAL)]])
+B = ['Dibaca sebagai arah dan perbandingan, bukan angka pasti', 'Belum diuji dengan data baru',
+     'Tidak memuat pandemi atau bencana', 'Laju pertumbuhan dan penurunan wisatawan belum bisa dipisahkan']
+for k, b_ in enumerate(B):
+    x = 0.9 + (k % 2) * 9.2; y = 5.75 + (k // 2) * 0.95
+    box(s, x, y, 9.0, 0.72, fill=YEL_L, line=YEL, anchor=MSO_ANCHOR.MIDDLE, margin=0.25,
+        paras=[[('!  ', 13, True, '9B2C1F'), (b_, 13, False, DARK)]])
+box(s, 0.9, 7.95, 18.2, 1.4, fill=TEAL, line=None, anchor=MSO_ANCHOR.MIDDLE, margin=0.35, paras=[
+    [('Kesimpulan', 12.5, True, YEL)],
+    [('Model dapat dipakai untuk membandingkan skenario kebijakan 2025–2050: mana yang arahnya lebih baik, dan seberapa besar bedanya.', 14.5, True, WHITE)]])
 source(s, 'Sumber: Buku Subbab 4.4–4.6.', y=10.12)
 s.notes_slide.notes_text_frame.text = (
-    'Sebagai rangkuman, ada tiga bukti kelayakan model. Pertama, uji struktur lolos seluruhnya: satuan konsisten, stok cocok, enam loop bekerja, dan 17 uji ekstrem tidak ada yang gagal. '
-    'Kedua, uji perilaku cukup baik: saat diuji terpisah semua MAPE di bawah 20 persen, saat dijalankan bersama tidak ada MAPE buruk, dan selisihnya berasal dari satu sumber, yaitu pertumbuhan wisatawan. '
-    'Ketiga, kalibrasi tidak mengganti satu pun nilai parameter. Ada empat batas pemakaian: model bukan alat ramal angka pasti, belum diuji dengan data baru, tidak memuat kejadian mendadak, '
-    'dan laju pertumbuhan serta penurunan wisatawan tidak bisa dipisahkan oleh data. Jadi model layak dipakai untuk membandingkan arah dan besar perbedaan antarskenario kebijakan 2025 sampai 2050.')
+    'Jadi, apakah model ini layak dipakai? Ada tiga hal yang saya periksa. Dari uji struktur, persamaan dan satuannya konsisten, dan model tetap masuk akal walaupun diberi nilai ekstrem. '
+    'Dari uji perilaku, hasil simulasi cukup dekat dengan data. Selisih terbesar ada pada jumlah wisatawan. Dari kalibrasi, tidak ada nilai parameter yang perlu diganti; '
+    'selisih wisatawan itu muncul karena lonjakan wisatawan setelah pandemi, yang memang tidak dimodelkan. '
+    'Ada beberapa hal yang perlu diingat: hasilnya dibaca sebagai arah dan perbandingan, bukan angka pasti; model belum diuji dengan data baru; pandemi dan bencana tidak dimodelkan; '
+    'dan laju pertumbuhan serta penurunan wisatawan belum bisa dipisahkan oleh data. Dengan catatan itu, model dapat dipakai untuk membandingkan skenario kebijakan sampai 2050.')
 p.save('/tmp/pptwork/v5/rangkuman_1slide.pptx')
 print('ok')
