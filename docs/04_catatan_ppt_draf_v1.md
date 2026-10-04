@@ -1,5 +1,16 @@
 # Catatan PPT sidang berbasis tujuan
 
+## Draf v4 – 16 menit (turunan dari v3; v3 tetap disimpan sebagai versi lengkap)
+
+- Slide utama: 25 (1–25), target ±16 menit. Urutan = slide v3 nomor 1, 6, 8, 9, 14, 17, 19, 21, 24, 25, 32, 34, 41, 50, 52, 56, 57, 59, 61, 64, 66, 69, 73, 74, 75.
+- Slide 26: indeks slide cadangan dan lampiran (pengganti slide agenda v3).
+- Slide 27–72: 46 slide cadangan (penanda abu "Cadangan" di pojok kanan bawah), urutan sama dengan v3.
+- Slide 73–88: Lampiran 1–16.
+- Dihapus: agenda (v3 #2) dan tiga slide ringkasan per tujuan (v3 #23, #63, #70); isinya tercakup di slide Kesimpulan.
+- Penanda W/S diganti dengan pil merah berisi target waktu (mis. 0:45).
+- Tambahan isi: kotak "Mengapa DIY?" di slide 2; baris data (2015–2025, tahun dasar 2025, horizon 2050) di slide 5; tombol pada slide pembatas tujuan menjadi "Hasil kunci: slide 8 / 17 / 22".
+- Catatan pembicara slide utama = naskah versi 16 menit (`docs/notes_v4.py`). Kode pembangun: `docs/build_v4.py` (input: hasil v3).
+
 ## Draf v3 (perubahan dari v2)
 
 - Label tahapan/subbab ditambahkan di atas judul pada 66 slide utama (mis. "4.1.3 · Causal Loop Diagram dan Struktur Feedback Loop"), mengikuti nomor subbab di buku.
