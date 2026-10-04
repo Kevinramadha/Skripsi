@@ -74,9 +74,9 @@ qa(s, 0.9, 2.5, 6.45, 2.95, [
     ('Hasil', 'Seluruh hubungan memiliki dasar teori atau bukti empiris.', '1E7A43')], size=12)
 head(s, 0.9, 5.6, 6.45, 'Uji konsistensi dimensi (satuan)')
 qa(s, 0.9, 6.15, 6.45, 2.75, [
-    ('Pertanyaan', 'Apakah satuan di sisi kiri dan kanan setiap persamaan cocok?'),
-    ('Cara', 'Units Check dan Check Model pada Vensim untuk seluruh persamaan.'),
-    ('Hasil', 'Tidak ada ketidaksesuaian satuan (lihat pesan Vensim di samping).', '1E7A43')], size=12)
+    ('Pertanyaan', 'Apakah satuan dalam setiap persamaan sudah sesuai? Misalnya, jumlah wisatawan tidak boleh dijumlahkan dengan luas lahan.'),
+    ('Cara', 'Seluruh persamaan diperiksa otomatis dengan fitur Units Check dan Check Model di Vensim.'),
+    ('Hasil', 'Tidak ditemukan satuan yang tidak sesuai (pesan Vensim: “Units are OK” dan “Model is OK.”).', '1E7A43')], size=12)
 y = 1.95
 for img, lab in [('dlg18.png', 'Units Check → “Units are OK”'), ('dlg19.png', 'Check Model → “Model is OK.”')]:
     pc = pic(s, US + img, 7.6, y, w=4.55); pc.line.color.rgb = rgb(LINE); pc.line.width = Pt(1)
@@ -85,26 +85,26 @@ for img, lab in [('dlg18.png', 'Units Check → “Units are OK”'), ('dlg19.pn
     y += ph + 0.45
 head(s, 12.4, 1.95, 6.7, 'Uji kecukupan batas model')
 for k, (n, lab, desc, fill, line, col) in enumerate([
-        ('26', 'variabel endogen', 'dihitung di dalam model: stok, aliran, variabel turunan', LIGHT, LINE, TEAL),
-        ('35', 'variabel eksogen', 'input dari luar model: data, regulasi, asumsi, kebijakan', LIGHT, LINE, TEAL),
-        ('15', 'aspek dikeluarkan', 'dicatat alasan & konsekuensinya (Lampiran 9)', YEL_L, YEL, '7A5A00')]):
+        ('26', 'variabel dihitung model', 'nilainya berubah mengikuti hubungan di dalam model', LIGHT, LINE, TEAL),
+        ('35', 'variabel input', 'nilainya ditetapkan dari luar: data, regulasi, asumsi, kebijakan', LIGHT, LINE, TEAL),
+        ('15', 'aspek di luar cakupan', 'alasan dan dampaknya terhadap hasil dicatat (Lampiran 9)', YEL_L, YEL, '7A5A00')]):
     box(s, 12.4, 2.55 + k * 1.12, 6.7, 1.0, fill=fill, line=line, anchor=MSO_ANCHOR.MIDDLE, margin=0.15,
         paras=[[(n + '  ', 22, True, col), (lab, 13, True, col)], [(desc, 10.5, False, DARK)]])
 box(s, 12.4, 5.95, 6.7, 2.95, fill=WHITE, line=LINE, paras=[
-    [('Batas tafsir hasil model', 12.5, True, TEAL)],
-    [('Model ', 11.5, False, DARK), ('tidak', 11.5, True, RED), (' dirancang untuk menjelaskan:', 11.5, False, DARK)],
-    [('•  harga dan daya saing harga', 11.5, False, DARK)],
-    [('•  promosi dan citra destinasi', 11.5, False, DARK)],
-    [('•  musim dan fluktuasi bulanan', 11.5, False, DARK)],
-    [('•  guncangan: pandemi, erupsi, gempa', 11.5, False, DARK)],
+    [('Cara membaca hasil model', 12.5, True, TEAL)],
+    [('Hasil menggambarkan arah perkembangan jangka panjang dalam kondisi normal, dan ', 11, False, DARK), ('tidak', 11, True, RED), (' dapat dipakai untuk menjelaskan pengaruh:', 11, False, DARK)],
+    [('•  harga dan daya saing harga', 11, False, DARK)],
+    [('•  promosi dan citra destinasi', 11, False, DARK)],
+    [('•  musim ramai/sepi dalam setahun', 11, False, DARK)],
+    [('•  kejadian mendadak: pandemi, erupsi, gempa', 11, False, DARK)],
     [('Daftar lengkap 15 aspek: Lampiran 9', 10.5, False, GREY, True)]])
-intinya(s, 'Struktur model dapat dipertanggungjawabkan secara teori dan matematis, dan hasilnya dibaca sebagai lintasan jangka panjang tanpa guncangan.')
+intinya(s, 'Struktur model dapat dipertanggungjawabkan secara teori dan matematis, dan hasilnya dibaca sebagai arah perkembangan jangka panjang dalam kondisi normal.')
 source(s, 'Sumber: Buku Subbab 4.4.1–4.4.2, Gambar 16 (dipotong pada pesan Vensim), Tabel 38–39; rincian di Lampiran 9.', y=10.12)
 s.notes_slide.notes_text_frame.text = (
     'Uji struktur saya mulai dari tiga pemeriksaan dasar. Pertama, kesesuaian struktur dan parameter: setiap variabel saya telusuri dan sumber serta landasannya saya catat, '
     'sehingga setiap hubungan sebab-akibat punya dasar teori atau bukti empiris. Kedua, konsistensi dimensi: Units Check dan Check Model di Vensim menampilkan "Units are OK" dan "Model is OK", '
-    'artinya satuan seluruh persamaan konsisten. Ketiga, kecukupan batas model: model memuat 61 variabel, 26 dihitung di dalam model dan 35 merupakan input, '
-    'serta 15 aspek sengaja dikeluarkan beserta konsekuensinya. Karena itu hasil model tidak dipakai untuk menjelaskan harga, promosi, musim, atau guncangan. Daftar lengkapnya ada di Lampiran 9.')
+    'artinya satuan seluruh persamaan konsisten. Ketiga, kecukupan batas model: model memuat 61 variabel, 26 dihitung di dalam model dan 35 merupakan input yang ditetapkan dari luar, '
+    'serta 15 aspek sengaja dikeluarkan beserta konsekuensinya. Karena itu hasil model tidak dipakai untuk menjelaskan harga, promosi, musim, atau kejadian mendadak seperti pandemi dan bencana. Daftar lengkapnya ada di Lampiran 9.')
 
 # ============================================================ 2/3
 s = S[1]
