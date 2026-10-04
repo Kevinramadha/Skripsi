@@ -881,3 +881,69 @@ tb(s, 13.6, 9.38, 5.5, 0.45, [('Penanda ada di pojok kanan bawah setiap slide', 
 
 p.save('/tmp/pptwork/stage2.pptx')
 print('v2 done', len(p.slides))
+
+# ------------------------------------------------------------------ v3: label tahapan / subbab di atas judul
+import copy as _copy
+from pptx.oxml.ns import qn
+STAGE = {
+ 3: '1.1 · Latar Belakang', 4: '1.1 · Latar Belakang', 5: '1.1 · Latar Belakang',
+ 6: '1.1 · Latar Belakang — Permasalahan', 7: '1.1 · Latar Belakang — Pendekatan Sistem Dinamis',
+ 8: '1.1 · Latar Belakang — Celah Penelitian', 9: '1.2–1.3 · Identifikasi Masalah dan Tujuan Penelitian',
+ 10: '1.2 · Batasan Masalah', 11: '2.3 · Kontribusi Penelitian Terkait', 12: '3.3 · Kerangka Pikir Penelitian',
+ 13: '3.2 & 3.4 · Lokasi Penelitian, Data dan Sumber Data', 14: '3.1 & 3.7 · Tahapan Penelitian',
+ 15: '3.6 · Alat dan Perangkat Lunak', 16: '3.7.1 · Pengumpulan dan Preprocessing Data',
+ 18: '3.7.2 · Identifikasi dan Perumusan Variabel CLD', 19: '4.1.1 · Hasil Identifikasi dan Evaluasi Variabel CLD',
+ 20: '4.1.3 · Perumusan dan Evaluasi Hubungan Kausal', 21: '4.1.3 · Causal Loop Diagram dan Struktur Feedback Loop',
+ 22: '4.1.2 · Penetapan Batas Model',
+ 25: '3.5 & 4.2 · Integrasi Data Citra Satelit', 26: '3.5.1 · Estimasi Jumlah ODTW dengan Night-Time Light',
+ 27: '3.5 · Validasi dan Evaluasi Kelayakan Estimator', 28: '4.2.1 · Estimasi Jumlah ODTW',
+ 29: '4.2.1 · Estimasi ODTW — Validasi Temporal dan Spasial', 30: '4.2.2 · Estimasi Lahan Terbangun — Uji Akurasi',
+ 31: '4.2.2 · Diagnosis Ketidakstabilan Temporal', 32: '4.2 · Simpulan Integrasi Data Citra Satelit',
+ 33: '4.1.4 · Konversi ke Stock-Flow Diagram', 34: '4.1.4 · Stock-Flow Diagram',
+ 35: '4.3.1 · Persamaan Stock — Subsistem Wisatawan', 36: '4.3.1 · Persamaan Stock — Subsistem Lainnya',
+ 37: '3.4.2 & 4.3.2 · Penetapan Parameter', 38: '4.3.2 · Penurunan Nilai Parameter', 39: '4.3.2.4 · Parameter Asumsi Pemodelan',
+ 40: '3.7.4 · Rancangan Uji Struktur', 41: '4.4.1–4.4.3 · Konsistensi Dimensi, Batas Model, Kekekalan Materi',
+ 42: '4.4.4 · Uji Loop Umpan Balik', 43: '4.4.5–4.4.6 · Uji Kondisi Ekstrem dan Galat Integrasi',
+ 44: '3.7.4 · Rancangan Uji Perilaku', 45: '4.5.1 · Rancangan Uji Perilaku — Penyambungan Data',
+ 46: '4.5.2 · Hasil Uji Parsial', 47: '4.5.3 · Hasil Uji Penuh', 48: '4.5.3 · Hasil Uji Penuh — Sumber Galat',
+ 49: '3.7.4 · Protokol Kalibrasi', 50: '4.6.1–4.6.5 · Hasil Kalibrasi Tahap 0–4', 51: '4.6.4 · Kalibrasi Diagnostik Subsistem Wisatawan',
+ 52: '4.4–4.6 · Sintesis Kelayakan Model', 53: '3.7.5 · Rancangan Analisis Sensitivitas', 54: '4.7 · Hasil Analisis Sensitivitas',
+ 55: '3.8.1 · Kriteria Penetapan Tuas Kebijakan', 56: '4.8.1–4.8.2 · Rancangan Skenario dan Indikator Kinerja',
+ 57: '4.8.3 · Hasil Perbandingan Skenario', 58: '4.8.3 · Hasil Perbandingan Skenario — Komposisi Daya Tarik',
+ 59: '4.8.3 · Hasil Perbandingan Skenario — Ambang Kepadatan', 60: '4.8.4 · Dekomposisi Kontribusi Tuas',
+ 61: '4.8.5 · Kekokohan Peringkat Skenario', 62: '4.8.6 · Implikasi Kebijakan',
+ 65: '3.9 & 4.9.1 · Implementasi Aplikasi Berbasis Web', 66: '3.9.1 & 4.9.1 · Arsitektur dan Implementasi Aplikasi',
+ 67: '4.9.1 · Implementasi Aplikasi — Halaman Aplikasi', 68: '4.9.2 · Hasil Pengujian Fungsional (Black-box)',
+ 69: '4.9.3 · Hasil Evaluasi Usability (SUS)',
+ 71: '4.10.2 · Diskusi', 72: '4.10.1 · Catatan Keterbatasan', 73: '5.1 · Kesimpulan', 74: '5.2 · Saran',
+}
+STAGE_COLOR = '1C8FA0'
+for i, label in STAGE.items():
+    sl = S[i - 1]
+    t = title_shape(sl)
+    txBody = t.text_frame._txBody
+    first = t.text_frame.paragraphs[0]._p
+    for para in t.text_frame.paragraphs:
+        pPr = para._p.find(qn('a:pPr'))
+        if pPr is not None:
+            ln = pPr.find(qn('a:lnSpc'))
+            if ln is not None:
+                ln.getparent().remove(ln)
+        para.line_spacing = 1.0
+        for r in para.runs:
+            r.font.size = Pt(35)
+    newp = _copy.deepcopy(first)
+    for r in list(newp.findall(qn('a:r')))[1:]:
+        newp.remove(r)
+    first.addprevious(newp)
+    pp = t.text_frame.paragraphs[0]
+    pp.runs[0].text = label
+    pp.runs[0].font.size = Pt(19)
+    pp.runs[0].font.bold = True
+    pp.runs[0].font.name = FB
+    pp.runs[0].font.color.rgb = rgb(STAGE_COLOR)
+    pp.space_after = Pt(2)
+    t.top = Inches(0.8)
+
+p.save('/tmp/pptwork/stage2.pptx')
+print('v3 stage labels', len(STAGE))

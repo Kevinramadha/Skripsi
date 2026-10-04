@@ -1,5 +1,12 @@
 # Catatan PPT sidang berbasis tujuan
 
+## Draf v3 (perubahan dari v2)
+
+- Label tahapan/subbab ditambahkan di atas judul pada 66 slide utama (mis. "4.1.3 · Causal Loop Diagram dan Struktur Feedback Loop"), mengikuti nomor subbab di buku.
+- Label: 19 pt tebal, warna 1C8FA0; judul slide diseragamkan 35 pt.
+- Tanpa label: slide 1 (judul), 2 (agenda/legenda), slide pembatas Tujuan, slide Ringkasan Hasil per tujuan, slide penutup, dan seluruh lampiran.
+- Kode pembangun: `docs/build_deck.py` (blok "v3").
+
 ## Draf v2 (perubahan dari v1)
 - **Slide 21 (CLD)** dirapikan: gambar CLD di kiri + tabel enam loop (loop, jenis, rantai kausal ringkas, peran dalam model) dari Tabel 26 buku.
 - **SFD dipindah ke bagian utama** sebagai slide 34 "Hasil: stock-flow diagram pariwisata DIY" (sub-tahap 2B). Lampiran SFD dihapus; nomor lampiran sesudahnya bergeser satu (Lampiran 9 = batas model, ..., Lampiran 15 = persamaan, Lampiran 16 = data historis).
